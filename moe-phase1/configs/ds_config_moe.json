@@ -1,0 +1,16 @@
+{
+  "train_micro_batch_size_per_gpu": 8,
+  "gradient_accumulation_steps": 1,
+  "steps_per_print": 0,
+  "zero_optimization": {
+    "stage": 0
+  },
+  "bf16": {
+    "enabled": true
+  },
+  "fp16": {
+    "enabled": false
+  },
+  "wall_clock_breakdown": true
+}
+

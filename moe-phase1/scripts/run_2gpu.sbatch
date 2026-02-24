@@ -1,12 +1,12 @@
 #!/bin/bash
 # Fill the placeholders below for LUMI.
-#SBATCH --job-name=phase1_1gpu
+#SBATCH --job-name=phase1_2gpu
 #SBATCH --account=ACCOUNT_PLACEHOLDER
 #SBATCH --partition=PARTITION_PLACEHOLDER
 #SBATCH --time=00:30:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --gpus-per-node=1
+#SBATCH --ntasks-per-node=2
+#SBATCH --gpus-per-node=2
 #SBATCH --cpus-per-task=8
 #SBATCH --output=logs/%x_%j.out
 
@@ -24,7 +24,7 @@ echo "PROJECT_ROOT=$PROJECT_ROOT"
 echo "VENV_PATH=$VENV_PATH"
 
 module purge
-# TODO: adjust these for LUMI 
+# TODO: adjust these for LUMI.
 module load python
 module load cuda
 
@@ -35,9 +35,9 @@ mkdir -p logs results
 export NCCL_DEBUG=INFO
 # export TORCH_DISTRIBUTED_DEBUG=DETAIL
 
-torchrun --nproc_per_node=1 src/train.py \
+torchrun --nproc_per_node=2 src/train.py \
   --config configs/base.json \
   --deepspeed \
   --ds_config configs/ds_config_moe.json \
-  --run_name phase1_1gpu \
+  --run_name phase1_2gpu \
   --out_dir results
