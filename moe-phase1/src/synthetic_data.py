@@ -28,7 +28,7 @@ class SyntheticTokenDataset(IterableDataset):
 
 
 def build_dataloader(config: Dict, rank: int, world_size: int) -> DataLoader:
-    _ = world_size  
+    _ = world_size  # kept for interface symmetry and possible later sharding logic
     dataset = SyntheticTokenDataset(
         vocab_size=int(config["vocab_size"]),
         seq_len=int(config["seq_len"]),
