@@ -1,58 +1,58 @@
 #!/bin/bash
-#SBATCH --job-name=phase1_1gpu
+#SBATCH --job-name=phase2_heavy_8gpu
 #SBATCH --account=project_462001047
-#SBATCH --partition=small-g
+#SBATCH --partition=standard-g
 #SBATCH --time=00:30:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --gpus-per-node=1
-#SBATCH --cpus-per-task=8
-#SBATCH --chdir=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1
+#SBATCH --gres=gpu:mi250:8
+#SBATCH --cpus-per-task=56
+#SBATCH --mem=400G
+#SBATCH --hint=nomultithread
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
+#SBATCH --chdir=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1
 
 set -euo pipefail
 
-# Project paths
 PROJECT_ROOT="$SLURM_SUBMIT_DIR"
 VENV_PATH="$PROJECT_ROOT/.venv"
-
-echo "PROJECT_ROOT=$PROJECT_ROOT"
-echo "VENV_PATH=$VENV_PATH"
-echo "HOST=$(hostname)"
-echo "SLURM_JOB_ID=${SLURM_JOB_ID:-NA}"
-
 mkdir -p "$PROJECT_ROOT/logs" "$PROJECT_ROOT/results" "$PROJECT_ROOT/.miopen"
 
-# LUMI container bindings 
 module purge
 module use /appl/local/laifs/modules
 module load lumi-aif-singularity-bindings
 
-# Container image 
 export SIF=/appl/local/laifs/containers/lumi-multitorch-u24r64f21m43t29-20260216_093549/lumi-multitorch-full-u24r64f21m43t29-20260216_093549.sif
 
-# ROCm/MIOpen cache 
+export NCCL_DEBUG=INFO
 export MIOPEN_USER_DB_PATH="$PROJECT_ROOT/.miopen"
 export MIOPEN_CACHE_DIR="$PROJECT_ROOT/.miopen"
 
-# debug
-export NCCL_DEBUG=INFO
+# 8 ranks on node, 56 CPUs => 7 threads/rank
+export OMP_NUM_THREADS=7
+export MKL_NUM_THREADS=$OMP_NUM_THREADS
+export OPENBLAS_NUM_THREADS=$OMP_NUM_THREADS
+export NUMEXPR_NUM_THREADS=$OMP_NUM_THREADS
 
 export TORCH_COMPILE_DISABLE=1
 export TORCHDYNAMO_DISABLE=1
 
-srun singularity run "$SIF" bash -lc "
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+export MALLOC_TRIM_THRESHOLD_=0
+
+srun --cpu-bind=cores singularity run "$SIF" bash -lc "
   set -euo pipefail
   cd '$PROJECT_ROOT'
   source '$VENV_PATH/bin/activate'
 
-  python -c 'import torch; print(\"cuda_available:\", torch.cuda.is_available()); print(\"device_count:\", torch.cuda.device_count()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"NA\")'
+  echo allowed_cpus_in_job=\$(nproc)
+  python -c 'import torch; print(\"visible_gpus:\", torch.cuda.device_count())'
 
-  torchrun --nproc_per_node=1 src/train.py \
-    --config configs/base.json \
+  torchrun --standalone --nproc_per_node=8 src/train.py \
+    --config configs/heavy.json \
     --deepspeed \
     --ds_config configs/ds_config_moe.json \
-    --run_name phase1_1gpu \
+    --run_name phase2_heavy_8gpu \
     --out_dir results
 "
