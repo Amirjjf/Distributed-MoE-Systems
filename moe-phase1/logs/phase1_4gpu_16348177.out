@@ -1,0 +1,1711 @@
+PROJECT_ROOT=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1
+VENV_PATH=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1/.venv
+HOST=nid005038
+SLURM_JOB_ID=16348177
+cuda_available: True
+device_count: 4
+AMD Instinct MI250X
+{
+  "run_name": "phase1_4gpu",
+  "metadata": {
+    "seed": 42,
+    "command": "src/train.py --config configs/base.json --deepspeed --ds_config configs/ds_config_moe.json --run_name phase1_4gpu --out_dir results",
+    "git_commit": "unknown",
+    "config_path": "configs/base.json",
+    "config_copy_path": "results/phase1_4gpu_config_used.json",
+    "env": {
+      "python_version": "3.12.3 (main, Jan 22 2026, 20:57:42) [GCC 13.3.0]",
+      "torch_version": "2.9.1+rocm6.4",
+      "cuda_available": "True",
+      "cuda_version": "None",
+      "cudnn_version": "3004000",
+      "deepspeed_version": "0.18.6"
+    },
+    "deepspeed_requested": true,
+    "nccl_debug": "INFO"
+  }
+}
+No existing process group found, creating a new group named: ep_size_1
+No existing process group found, creating a new group named: ep_size_1
+No existing process group found, creating a new group named: ep_size_1
+No existing process group found, creating a new group named: ep_size_1
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Bootstrap : Using nmn0:10.120.24.104<0>
+nid005038:1523:1523 [0] NCCL INFO ROCr version 1.15
+nid005038:1523:1523 [0] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO RCCL version : 2.22.3-HEAD:7d8d67c
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.2.0-120-e7d83f5
+Hostname     : nid005038
+Librccl path : /opt/venv/lib/python3.12/site-packages/torch/lib/librccl.so
+nid005038:1527:1527 [3] NCCL INFO ROCr version 1.15
+nid005038:1524:1524 [1] NCCL INFO ROCr version 1.15
+nid005038:1526:1526 [2] NCCL INFO ROCr version 1.15
+nid005038:1527:1527 [3] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1
+nid005038:1524:1524 [1] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1
+nid005038:1526:1526 [2] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1
+nid005038:1524:1524 [1] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1526:1526 [2] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1527:1527 [3] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Comm config Blocking set to 1
+nid005038:1526:1526 [2] NCCL INFO Bootstrap : Using nmn0:10.120.24.104<0>
+nid005038:1527:1527 [3] NCCL INFO Bootstrap : Using nmn0:10.120.24.104<0>
+nid005038:1524:1524 [1] NCCL INFO Bootstrap : Using nmn0:10.120.24.104<0>
+nid005038:1526:1526 [2] NCCL INFO RCCL version : 2.22.3-HEAD:7d8d67c
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.2.0-120-e7d83f5
+Hostname     : nid005038
+Librccl path : /opt/venv/lib/python3.12/site-packages/torch/lib/librccl.so
+nid005038:1527:1527 [3] NCCL INFO RCCL version : 2.22.3-HEAD:7d8d67c
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.2.0-120-e7d83f5
+Hostname     : nid005038
+Librccl path : /opt/venv/lib/python3.12/site-packages/torch/lib/librccl.so
+nid005038:1524:1524 [1] NCCL INFO RCCL version : 2.22.3-HEAD:7d8d67c
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.2.0-120-e7d83f5
+Hostname     : nid005038
+Librccl path : /opt/venv/lib/python3.12/site-packages/torch/lib/librccl.so
+nid005038:1524:1524 [1] NCCL INFO Comm config Blocking set to 1
+nid005038:1527:1527 [3] NCCL INFO Comm config Blocking set to 1
+nid005038:1526:1526 [2] NCCL INFO Comm config Blocking set to 1
+nid005038:1527:2142 [3] NCCL INFO NET/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1527:2142 [3] NCCL INFO NET/Plugin: Using internal network plugin.
+nid005038:1527:2142 [3] NCCL INFO NET/IB : No device found.
+nid005038:1527:2142 [3] NCCL INFO NET/Socket : Using [0]nmn0:10.120.24.104<0> [1]hsn0:10.253.41.214<0> [2]hsn1:10.253.41.213<0> [3]hsn2:10.253.51.213<0> [4]hsn3:10.253.51.214<0>
+nid005038:1527:2142 [3] NCCL INFO Using network Socket
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2142 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1527:2142 [3] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1527:2142 [3] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1527:2142 [3] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1527:2142 [3] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1527:2142 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1523:2139 [0] NCCL INFO NET/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1523:2139 [0] NCCL INFO NET/Plugin: Using internal network plugin.
+nid005038:1523:2139 [0] NCCL INFO NET/IB : No device found.
+nid005038:1523:2139 [0] NCCL INFO NET/Socket : Using [0]nmn0:10.120.24.104<0> [1]hsn0:10.253.41.214<0> [2]hsn1:10.253.41.213<0> [3]hsn2:10.253.51.213<0> [4]hsn3:10.253.51.214<0>
+nid005038:1523:2139 [0] NCCL INFO Using network Socket
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+nid005038:1526:2141 [2] NCCL INFO NET/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1526:2141 [2] NCCL INFO NET/Plugin: Using internal network plugin.
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2139 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1526:2141 [2] NCCL INFO NET/IB : No device found.
+nid005038:1523:2139 [0] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1523:2139 [0] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1523:2139 [0] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1523:2139 [0] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1526:2141 [2] NCCL INFO NET/Socket : Using [0]nmn0:10.120.24.104<0> [1]hsn0:10.253.41.214<0> [2]hsn1:10.253.41.213<0> [3]hsn2:10.253.51.213<0> [4]hsn3:10.253.51.214<0>
+nid005038:1526:2141 [2] NCCL INFO Using network Socket
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1524:2140 [1] NCCL INFO NET/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1524:2140 [1] NCCL INFO NET/Plugin: Using internal network plugin.
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2141 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1526:2141 [2] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1526:2141 [2] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1526:2141 [2] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1526:2141 [2] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1524:2140 [1] NCCL INFO NET/IB : No device found.
+nid005038:1523:2139 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2140 [1] NCCL INFO NET/Socket : Using [0]nmn0:10.120.24.104<0> [1]hsn0:10.253.41.214<0> [2]hsn1:10.253.41.213<0> [3]hsn2:10.253.51.213<0> [4]hsn3:10.253.51.214<0>
+nid005038:1524:2140 [1] NCCL INFO Using network Socket
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2140 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1524:2140 [1] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1524:2140 [1] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1524:2140 [1] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1524:2140 [1] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1526:2141 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2140 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2140 [1] NCCL INFO ncclCommInitRank comm 0x4b0e5200 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId d6000 commId 0x3892bee213bb3842 - Init START
+nid005038:1523:2139 [0] NCCL INFO ncclCommInitRank comm 0x4b0e68c0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId c1000 commId 0x3892bee213bb3842 - Init START
+nid005038:1527:2142 [3] NCCL INFO ncclCommInitRank comm 0x4b107b00 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId de000 commId 0x3892bee213bb3842 - Init START
+nid005038:1526:2141 [2] NCCL INFO ncclCommInitRank comm 0x4b106dc0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId d9000 commId 0x3892bee213bb3842 - Init START
+nid005038:1524:2140 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2141 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1523:2139 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2142 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2141 [2] NCCL INFO Setting affinity for GPU 2 to fefe,00000000
+nid005038:1527:2142 [3] NCCL INFO Setting affinity for GPU 3 to fefe,00000000
+nid005038:1523:2139 [0] NCCL INFO Setting affinity for GPU 0 to fe0000,00000000
+nid005038:1524:2140 [1] NCCL INFO Setting affinity for GPU 1 to fe00
+nid005038:1523:2139 [0] NCCL INFO comm 0x4b0e68c0 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+nid005038:1527:2142 [3] NCCL INFO comm 0x4b107b00 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+nid005038:1526:2141 [2] NCCL INFO comm 0x4b106dc0 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+nid005038:1524:2140 [1] NCCL INFO comm 0x4b0e5200 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+nid005038:1523:2139 [0] NCCL INFO Channel 00/04 :    0   2   3   1
+nid005038:1527:2142 [3] NCCL INFO Trees [0] 1/-1/-1->3->2 [1] 1/-1/-1->3->2 [2] 1/-1/-1->3->2 [3] 1/-1/-1->3->2 comm 0x4b107b00 nRanks 04 busId de000
+nid005038:1523:2139 [0] NCCL INFO Channel 01/04 :    0   2   3   1
+nid005038:1526:2141 [2] NCCL INFO Trees [0] 3/-1/-1->2->0 [1] 3/-1/-1->2->0 [2] 3/-1/-1->2->0 [3] 3/-1/-1->2->0 comm 0x4b106dc0 nRanks 04 busId d9000
+nid005038:1524:2140 [1] NCCL INFO Trees [0] -1/-1/-1->1->3 [1] -1/-1/-1->1->3 [2] -1/-1/-1->1->3 [3] -1/-1/-1->1->3 comm 0x4b0e5200 nRanks 04 busId d6000
+nid005038:1523:2139 [0] NCCL INFO Channel 02/04 :    0   2   3   1
+nid005038:1527:2142 [3] NCCL INFO P2P Chunksize set to 524288
+nid005038:1526:2141 [2] NCCL INFO P2P Chunksize set to 524288
+nid005038:1523:2139 [0] NCCL INFO Channel 03/04 :    0   2   3   1
+nid005038:1524:2140 [1] NCCL INFO P2P Chunksize set to 524288
+nid005038:1523:2139 [0] NCCL INFO Trees [0] 2/-1/-1->0->-1 [1] 2/-1/-1->0->-1 [2] 2/-1/-1->0->-1 [3] 2/-1/-1->0->-1 comm 0x4b0e68c0 nRanks 04 busId c1000
+nid005038:1523:2139 [0] NCCL INFO P2P Chunksize set to 524288
+nid005038:1526:2141 [2] NCCL INFO Channel 00/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1523:2139 [0] NCCL INFO Channel 00/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b0e68c0 nRanks 04
+nid005038:1523:2139 [0] NCCL INFO Channel 01/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b0e68c0 nRanks 04
+nid005038:1526:2141 [2] NCCL INFO Channel 01/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1523:2139 [0] NCCL INFO Channel 02/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b0e68c0 nRanks 04
+nid005038:1526:2141 [2] NCCL INFO Channel 02/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1523:2139 [0] NCCL INFO Channel 03/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b0e68c0 nRanks 04
+nid005038:1526:2141 [2] NCCL INFO Channel 03/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 00/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 01/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 02/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 03/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Channel 00/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Channel 01/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Channel 02/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Channel 03/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Connected all rings
+nid005038:1526:2141 [2] NCCL INFO Connected all rings
+nid005038:1526:2141 [2] NCCL INFO Channel 00/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Connected all rings
+nid005038:1524:2140 [1] NCCL INFO Channel 00/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1523:2139 [0] NCCL INFO Connected all rings
+nid005038:1526:2141 [2] NCCL INFO Channel 01/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Channel 01/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1526:2141 [2] NCCL INFO Channel 02/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Channel 02/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1526:2141 [2] NCCL INFO Channel 03/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b106dc0 nRanks 04
+nid005038:1524:2140 [1] NCCL INFO Channel 03/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b0e5200 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 00/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 01/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 02/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1527:2142 [3] NCCL INFO Channel 03/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b107b00 nRanks 04
+nid005038:1523:2139 [0] NCCL INFO Connected all trees
+nid005038:1524:2140 [1] NCCL INFO Connected all trees
+nid005038:1526:2141 [2] NCCL INFO Connected all trees
+nid005038:1527:2142 [3] NCCL INFO Connected all trees
+nid005038:1527:2142 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1524:2140 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1527:2142 [3] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1524:2140 [1] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1526:2141 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1526:2141 [2] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1523:2139 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1523:2139 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1523:2139 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005038:1526:2141 [2] NCCL INFO TUNER/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1527:2142 [3] NCCL INFO TUNER/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1526:2141 [2] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so. Using internal tuner plugin.
+nid005038:1527:2142 [3] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so. Using internal tuner plugin.
+nid005038:1526:2141 [2] NCCL INFO ncclCommInitRank comm 0x4b106dc0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId d9000 commId 0x3892bee213bb3842 localSize 272 used 134807744 bytes on core 33 - Init COMPLETE
+nid005038:1527:2142 [3] NCCL INFO ncclCommInitRank comm 0x4b107b00 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId de000 commId 0x3892bee213bb3842 localSize 272 used 134807744 bytes on core 34 - Init COMPLETE
+nid005038:1526:2141 [2] NCCL INFO Init timings: rank 2 nranks 4 total 2.22 (kernels 1.66, bootstrap 0.04, allgathers 0.02, topo 0.44, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1527:2142 [3] NCCL INFO Init timings: rank 3 nranks 4 total 2.22 (kernels 1.61, bootstrap 0.10, allgathers 0.01, topo 0.45, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1523:2139 [0] NCCL INFO TUNER/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1523:2139 [0] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so. Using internal tuner plugin.
+nid005038:1523:2139 [0] NCCL INFO ncclCommInitRank comm 0x4b0e68c0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId c1000 commId 0x3892bee213bb3842 localSize 272 used 126419136 bytes on core 49 - Init COMPLETE
+nid005038:1523:2139 [0] NCCL INFO Init timings: rank 0 nranks 4 total 2.23 (kernels 1.66, bootstrap 0.04, allgathers 0.01, topo 0.45, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1524:2140 [1] NCCL INFO TUNER/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005038:1524:2140 [1] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so. Using internal tuner plugin.
+nid005038:1524:2140 [1] NCCL INFO ncclCommInitRank comm 0x4b0e5200 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId d6000 commId 0x3892bee213bb3842 localSize 272 used 109641920 bytes on core 11 - Init COMPLETE
+nid005038:1524:2140 [1] NCCL INFO Init timings: rank 1 nranks 4 total 2.22 (kernels 1.67, bootstrap 0.04, allgathers 0.00, topo 0.46, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Comm config Blocking set to 1
+nid005038:1527:1527 [3] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1524:1524 [1] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1526:1526 [2] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1527:1527 [3] NCCL INFO Comm config Blocking set to 1
+nid005038:1524:1524 [1] NCCL INFO Comm config Blocking set to 1
+nid005038:1526:1526 [2] NCCL INFO Comm config Blocking set to 1
+nid005038:1523:2170 [0] NCCL INFO Using network Socket
+nid005038:1524:2171 [1] NCCL INFO Using network Socket
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+nid005038:1527:2172 [3] NCCL INFO Using network Socket
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2170 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2171 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2172 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1523:2170 [0] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1523:2170 [0] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1523:2170 [0] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1523:2170 [0] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1524:2171 [1] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1524:2171 [1] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1524:2171 [1] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1524:2171 [1] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1527:2172 [3] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1527:2172 [3] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1527:2172 [3] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1527:2172 [3] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1523:2170 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2171 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2172 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2173 [2] NCCL INFO Using network Socket
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2173 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1526:2173 [2] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1526:2173 [2] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1526:2173 [2] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1526:2173 [2] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1526:2173 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2173 [2] NCCL INFO ncclCommInitRank comm 0x4b1c2620 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId d9000 commId 0x7157ab9cd03a0947 - Init START
+nid005038:1523:2170 [0] NCCL INFO ncclCommInitRank comm 0x4b1a2120 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId c1000 commId 0x7157ab9cd03a0947 - Init START
+nid005038:1524:2171 [1] NCCL INFO ncclCommInitRank comm 0x4b1a0a60 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId d6000 commId 0x7157ab9cd03a0947 - Init START
+nid005038:1527:2172 [3] NCCL INFO ncclCommInitRank comm 0x4b1c3360 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId de000 commId 0x7157ab9cd03a0947 - Init START
+nid005038:1526:2173 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1523:2170 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2171 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2172 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2172 [3] NCCL INFO Setting affinity for GPU 3 to fefe,00000000
+nid005038:1523:2170 [0] NCCL INFO Setting affinity for GPU 0 to fe0000,00000000
+nid005038:1526:2173 [2] NCCL INFO Setting affinity for GPU 2 to fefe,00000000
+nid005038:1524:2171 [1] NCCL INFO Setting affinity for GPU 1 to fe00
+nid005038:1527:2172 [3] NCCL INFO comm 0x4b1c3360 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+nid005038:1523:2170 [0] NCCL INFO comm 0x4b1a2120 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+nid005038:1526:2173 [2] NCCL INFO comm 0x4b1c2620 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+nid005038:1524:2171 [1] NCCL INFO comm 0x4b1a0a60 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+nid005038:1523:2170 [0] NCCL INFO Channel 00/04 :    0   2   3   1
+nid005038:1527:2172 [3] NCCL INFO Trees [0] 1/-1/-1->3->2 [1] 1/-1/-1->3->2 [2] 1/-1/-1->3->2 [3] 1/-1/-1->3->2 comm 0x4b1c3360 nRanks 04 busId de000
+nid005038:1523:2170 [0] NCCL INFO Channel 01/04 :    0   2   3   1
+nid005038:1527:2172 [3] NCCL INFO P2P Chunksize set to 524288
+nid005038:1526:2173 [2] NCCL INFO Trees [0] 3/-1/-1->2->0 [1] 3/-1/-1->2->0 [2] 3/-1/-1->2->0 [3] 3/-1/-1->2->0 comm 0x4b1c2620 nRanks 04 busId d9000
+nid005038:1523:2170 [0] NCCL INFO Channel 02/04 :    0   2   3   1
+nid005038:1526:2173 [2] NCCL INFO P2P Chunksize set to 524288
+nid005038:1523:2170 [0] NCCL INFO Channel 03/04 :    0   2   3   1
+nid005038:1524:2171 [1] NCCL INFO Trees [0] -1/-1/-1->1->3 [1] -1/-1/-1->1->3 [2] -1/-1/-1->1->3 [3] -1/-1/-1->1->3 comm 0x4b1a0a60 nRanks 04 busId d6000
+nid005038:1523:2170 [0] NCCL INFO Trees [0] 2/-1/-1->0->-1 [1] 2/-1/-1->0->-1 [2] 2/-1/-1->0->-1 [3] 2/-1/-1->0->-1 comm 0x4b1a2120 nRanks 04 busId c1000
+nid005038:1524:2171 [1] NCCL INFO P2P Chunksize set to 524288
+nid005038:1523:2170 [0] NCCL INFO P2P Chunksize set to 524288
+nid005038:1523:2170 [0] NCCL INFO Channel 00/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b1a2120 nRanks 04
+nid005038:1526:2173 [2] NCCL INFO Channel 00/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1526:2173 [2] NCCL INFO Channel 01/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1523:2170 [0] NCCL INFO Channel 01/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b1a2120 nRanks 04
+nid005038:1526:2173 [2] NCCL INFO Channel 02/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1523:2170 [0] NCCL INFO Channel 02/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b1a2120 nRanks 04
+nid005038:1526:2173 [2] NCCL INFO Channel 03/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1523:2170 [0] NCCL INFO Channel 03/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4b1a2120 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 00/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 01/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 02/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 03/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Channel 00/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Channel 01/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Channel 02/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Channel 03/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Connected all rings
+nid005038:1526:2173 [2] NCCL INFO Connected all rings
+nid005038:1526:2173 [2] NCCL INFO Channel 00/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Connected all rings
+nid005038:1524:2171 [1] NCCL INFO Channel 00/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1523:2170 [0] NCCL INFO Connected all rings
+nid005038:1524:2171 [1] NCCL INFO Channel 01/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1526:2173 [2] NCCL INFO Channel 01/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Channel 02/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1526:2173 [2] NCCL INFO Channel 02/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Channel 03/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4b1a0a60 nRanks 04
+nid005038:1526:2173 [2] NCCL INFO Channel 03/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4b1c2620 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 00/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 01/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 02/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1527:2172 [3] NCCL INFO Channel 03/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4b1c3360 nRanks 04
+nid005038:1524:2171 [1] NCCL INFO Connected all trees
+nid005038:1523:2170 [0] NCCL INFO Connected all trees
+nid005038:1527:2172 [3] NCCL INFO Connected all trees
+nid005038:1526:2173 [2] NCCL INFO Connected all trees
+nid005038:1524:2171 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1524:2171 [1] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1527:2172 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1527:2172 [3] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1526:2173 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1526:2173 [2] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1523:2170 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1523:2170 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1523:2170 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005038:1527:2172 [3] NCCL INFO ncclCommInitRank comm 0x4b1c3360 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId de000 commId 0x7157ab9cd03a0947 localSize 272 used 269615488 bytes on core 38 - Init COMPLETE
+nid005038:1526:2173 [2] NCCL INFO ncclCommInitRank comm 0x4b1c2620 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId d9000 commId 0x7157ab9cd03a0947 localSize 272 used 269615488 bytes on core 33 - Init COMPLETE
+nid005038:1527:2172 [3] NCCL INFO Init timings: rank 3 nranks 4 total 0.56 (kernels 0.00, bootstrap 0.02, allgathers 0.02, topo 0.45, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1526:2173 [2] NCCL INFO Init timings: rank 2 nranks 4 total 0.55 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.47, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1524:2171 [1] NCCL INFO ncclCommInitRank comm 0x4b1a0a60 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId d6000 commId 0x7157ab9cd03a0947 localSize 272 used 219283840 bytes on core 9 - Init COMPLETE
+nid005038:1523:2170 [0] NCCL INFO ncclCommInitRank comm 0x4b1a2120 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId c1000 commId 0x7157ab9cd03a0947 localSize 272 used 252838272 bytes on core 49 - Init COMPLETE
+nid005038:1524:2171 [1] NCCL INFO Init timings: rank 1 nranks 4 total 0.56 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.47, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1523:2170 [0] NCCL INFO Init timings: rank 0 nranks 4 total 0.56 (kernels 0.00, bootstrap 0.02, allgathers 0.01, topo 0.46, graphs 0.00, connections 0.06, rest 0.00)
+Running with DeepSpeed MoE backend
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Comm config Blocking set to 1
+nid005038:1523:2217 [0] NCCL INFO Using network Socket
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2217 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1523:2217 [0] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1523:2217 [0] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1523:2217 [0] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1523:2217 [0] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1523:2217 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1523:2217 [0] NCCL INFO ncclCommInitRank comm 0x4775f8b0 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId c1000 commId 0xeefe44d9380e731c - Init START
+nid005038:1523:2217 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:1526 [2] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1524:1524 [1] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1526:1526 [2] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1524:1524 [1] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1526:1526 [2] NCCL INFO Comm config Blocking set to 1
+nid005038:1524:1524 [1] NCCL INFO Comm config Blocking set to 1
+nid005038:1527:1527 [3] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1524:2222 [1] NCCL INFO Using network Socket
+nid005038:1527:1527 [3] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1526:2223 [2] NCCL INFO Using network Socket
+nid005038:1527:1527 [3] NCCL INFO Comm config Blocking set to 1
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+nid005038:1527:2225 [3] NCCL INFO Using network Socket
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2223 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2222 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2225 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1526:2223 [2] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1526:2223 [2] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1526:2223 [2] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1526:2223 [2] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1524:2222 [1] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1524:2222 [1] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1524:2222 [1] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1524:2222 [1] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1527:2225 [3] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1527:2225 [3] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1527:2225 [3] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1527:2225 [3] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1526:2223 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2222 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2225 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2223 [2] NCCL INFO ncclCommInitRank comm 0x46b734a0 rank 0 nranks 1 cudaDev 2 nvmlDev 2 busId d9000 commId 0x191cfbc5d7823549 - Init START
+nid005038:1524:2222 [1] NCCL INFO ncclCommInitRank comm 0x46f53040 rank 0 nranks 1 cudaDev 1 nvmlDev 1 busId d6000 commId 0x36cc1bea482c4886 - Init START
+nid005038:1527:2225 [3] NCCL INFO ncclCommInitRank comm 0x47bb8450 rank 0 nranks 1 cudaDev 3 nvmlDev 3 busId de000 commId 0x643721b45e370686 - Init START
+nid005038:1526:2223 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2222 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2225 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1523:2217 [0] NCCL INFO Setting affinity for GPU 0 to fe0000,00000000
+nid005038:1523:2217 [0] NCCL INFO comm 0x4775f8b0 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005038:1523:2217 [0] NCCL INFO Channel 00/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 01/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 02/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 03/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 04/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 05/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 06/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 07/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 08/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 09/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 10/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 11/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 12/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 13/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 14/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 15/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 16/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 17/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 18/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 19/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 20/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 21/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 22/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 23/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 24/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 25/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 26/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 27/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 28/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 29/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 30/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Channel 31/32 :    0
+nid005038:1523:2217 [0] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x4775f8b0 nRanks 01 busId c1000
+nid005038:1523:2217 [0] NCCL INFO P2P Chunksize set to 131072
+nid005038:1523:2217 [0] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005038:1523:2217 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005038:1523:2217 [0] NCCL INFO ncclCommInitRank comm 0x4775f8b0 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId c1000 commId 0xeefe44d9380e731c localSize 272 used 354108256 bytes on core 49 - Init COMPLETE
+nid005038:1523:2217 [0] NCCL INFO Init timings: rank 0 nranks 1 total 0.12 (kernels 0.00, bootstrap 0.01, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+nid005038:1527:2225 [3] NCCL INFO Setting affinity for GPU 3 to fefe,00000000
+nid005038:1527:2225 [3] NCCL INFO comm 0x47bb8450 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005038:1527:2225 [3] NCCL INFO Channel 00/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 01/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 02/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 03/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 04/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 05/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 06/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 07/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 08/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 09/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 10/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 11/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 12/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 13/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 14/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 15/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 16/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 17/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 18/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 19/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 20/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 21/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 22/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 23/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 24/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 25/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 26/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 27/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 28/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 29/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 30/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Channel 31/32 :    0
+nid005038:1527:2225 [3] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x47bb8450 nRanks 01 busId de000
+nid005038:1527:2225 [3] NCCL INFO P2P Chunksize set to 131072
+nid005038:1526:2223 [2] NCCL INFO Setting affinity for GPU 2 to fefe,00000000
+nid005038:1526:2223 [2] NCCL INFO comm 0x46b734a0 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005038:1524:2222 [1] NCCL INFO Setting affinity for GPU 1 to fe00
+nid005038:1526:2223 [2] NCCL INFO Channel 00/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 01/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 02/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 03/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 04/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 05/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 06/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 07/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 08/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 09/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 10/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 11/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 12/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 13/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 14/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 15/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 16/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 17/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 18/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 19/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 20/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 21/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 22/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 23/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 24/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 25/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 26/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 27/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 28/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 29/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 30/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Channel 31/32 :    0
+nid005038:1526:2223 [2] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x46b734a0 nRanks 01 busId d9000
+nid005038:1526:2223 [2] NCCL INFO P2P Chunksize set to 131072
+nid005038:1524:2222 [1] NCCL INFO comm 0x46f53040 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005038:1524:2222 [1] NCCL INFO Channel 00/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 01/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 02/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 03/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 04/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 05/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 06/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 07/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 08/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 09/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 10/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 11/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 12/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 13/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 14/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 15/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 16/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 17/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 18/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 19/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 20/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 21/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 22/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 23/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 24/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 25/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 26/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 27/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 28/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 29/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 30/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Channel 31/32 :    0
+nid005038:1524:2222 [1] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x46f53040 nRanks 01 busId d6000
+nid005038:1524:2222 [1] NCCL INFO P2P Chunksize set to 131072
+nid005038:1527:2225 [3] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005038:1527:2225 [3] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005038:1527:2225 [3] NCCL INFO ncclCommInitRank comm 0x47bb8450 rank 0 nranks 1 cudaDev 3 nvmlDev 3 busId de000 commId 0x643721b45e370686 localSize 272 used 370885472 bytes on core 46 - Init COMPLETE
+nid005038:1527:2225 [3] NCCL INFO Init timings: rank 0 nranks 1 total 0.12 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+nid005038:1526:2223 [2] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005038:1526:2223 [2] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005038:1526:2223 [2] NCCL INFO ncclCommInitRank comm 0x46b734a0 rank 0 nranks 1 cudaDev 2 nvmlDev 2 busId d9000 commId 0x191cfbc5d7823549 localSize 272 used 370885472 bytes on core 33 - Init COMPLETE
+nid005038:1526:2223 [2] NCCL INFO Init timings: rank 0 nranks 1 total 0.12 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+nid005038:1524:2222 [1] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005038:1524:2222 [1] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005038:1524:2222 [1] NCCL INFO ncclCommInitRank comm 0x46f53040 rank 0 nranks 1 cudaDev 1 nvmlDev 1 busId d6000 commId 0x36cc1bea482c4886 localSize 272 used 320553824 bytes on core 9 - Init COMPLETE
+nid005038:1524:2222 [1] NCCL INFO Init timings: rank 0 nranks 1 total 0.12 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+[Rank 0] time (ms) | fwd_microstep: 2074.32 | bwd_microstep: 809.88 | bwd_inner_microstep: 793.90 | bwd_allreduce_microstep: 15.89 | step_microstep: 55.55
+[Rank 0] time (ms) | fwd: 2074.29 | bwd: 809.88 | bwd_inner: 793.92 | bwd_allreduce: 15.88 | step: 55.54
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1523:1523 [0] NCCL INFO Comm config Blocking set to 1
+nid005038:1523:2303 [0] NCCL INFO Using network Socket
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1523:2303 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1523:2303 [0] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1523:2303 [0] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1523:2303 [0] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1523:2303 [0] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1523:2303 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:1524 [1] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1526:1526 [2] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005038:1524:1524 [1] NCCL INFO Comm config Blocking set to 1
+nid005038:1526:1526 [2] NCCL INFO Comm config Blocking set to 1
+nid005038:1524:2305 [1] NCCL INFO Using network Socket
+nid005038:1526:2304 [2] NCCL INFO Using network Socket
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+nid005038:1527:1527 [3] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+nid005038:1527:1527 [3] NCCL INFO Comm config Blocking set to 1
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+nid005038:1527:2306 [3] NCCL INFO Using network Socket
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 7
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 7
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1524:2305 [1] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1526:2304 [2] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005038:1527:2306 [3] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+nid005038:1524:2305 [1] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1524:2305 [1] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1524:2305 [1] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1524:2305 [1] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1526:2304 [2] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1526:2304 [2] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1526:2304 [2] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1526:2304 [2] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1527:2306 [3] NCCL INFO [node_id = 10; gpu_id = 62036; unique_id = 1949861185776146097; location_id = 55552; bdf = 55552; domain = 0; partition = 0], 
+nid005038:1527:2306 [3] NCCL INFO [node_id = 9; gpu_id = 1553; unique_id = 3102565238542880805; location_id = 54784; bdf = 54784; domain = 0; partition = 0], 
+nid005038:1527:2306 [3] NCCL INFO [node_id = 11; gpu_id = 49174; unique_id = 11468094539215134955; location_id = 56832; bdf = 56832; domain = 0; partition = 0], 
+nid005038:1527:2306 [3] NCCL INFO [node_id = 4; gpu_id = 63582; unique_id = 14511587399463009639; location_id = 49408; bdf = 49408; domain = 0; partition = 0], 
+nid005038:1524:2305 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2304 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2306 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2304 [2] NCCL INFO ncclCommInitRank comm 0x4bf37910 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId d9000 commId 0xabf62a07c9d3fecb - Init START
+nid005038:1524:2305 [1] NCCL INFO ncclCommInitRank comm 0x4bf177d0 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId d6000 commId 0xabf62a07c9d3fecb - Init START
+nid005038:1527:2306 [3] NCCL INFO ncclCommInitRank comm 0x4bf39ad0 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId de000 commId 0xabf62a07c9d3fecb - Init START
+nid005038:1523:2303 [0] NCCL INFO ncclCommInitRank comm 0x4bf151b0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId c1000 commId 0xabf62a07c9d3fecb - Init START
+nid005038:1523:2303 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2305 [1] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1526:2304 [2] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1527:2306 [3] NCCL INFO initialized internal alternative rsmi functionality
+nid005038:1524:2305 [1] NCCL INFO Setting affinity for GPU 1 to fe00
+nid005038:1526:2304 [2] NCCL INFO Setting affinity for GPU 2 to fefe,00000000
+nid005038:1523:2303 [0] NCCL INFO Setting affinity for GPU 0 to fe0000,00000000
+nid005038:1527:2306 [3] NCCL INFO Setting affinity for GPU 3 to fefe,00000000
+nid005038:1526:2304 [2] NCCL INFO comm 0x4bf37910 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+nid005038:1523:2303 [0] NCCL INFO comm 0x4bf151b0 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+nid005038:1524:2305 [1] NCCL INFO comm 0x4bf177d0 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+nid005038:1527:2306 [3] NCCL INFO comm 0x4bf39ad0 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+nid005038:1526:2304 [2] NCCL INFO Trees [0] 3/-1/-1->2->0 [1] 3/-1/-1->2->0 [2] 3/-1/-1->2->0 [3] 3/-1/-1->2->0 comm 0x4bf37910 nRanks 04 busId d9000
+nid005038:1523:2303 [0] NCCL INFO Channel 00/04 :    0   2   3   1
+nid005038:1526:2304 [2] NCCL INFO P2P Chunksize set to 524288
+nid005038:1527:2306 [3] NCCL INFO Trees [0] 1/-1/-1->3->2 [1] 1/-1/-1->3->2 [2] 1/-1/-1->3->2 [3] 1/-1/-1->3->2 comm 0x4bf39ad0 nRanks 04 busId de000
+nid005038:1524:2305 [1] NCCL INFO Trees [0] -1/-1/-1->1->3 [1] -1/-1/-1->1->3 [2] -1/-1/-1->1->3 [3] -1/-1/-1->1->3 comm 0x4bf177d0 nRanks 04 busId d6000
+nid005038:1523:2303 [0] NCCL INFO Channel 01/04 :    0   2   3   1
+nid005038:1527:2306 [3] NCCL INFO P2P Chunksize set to 524288
+nid005038:1524:2305 [1] NCCL INFO P2P Chunksize set to 524288
+nid005038:1523:2303 [0] NCCL INFO Channel 02/04 :    0   2   3   1
+nid005038:1523:2303 [0] NCCL INFO Channel 03/04 :    0   2   3   1
+nid005038:1523:2303 [0] NCCL INFO Trees [0] 2/-1/-1->0->-1 [1] 2/-1/-1->0->-1 [2] 2/-1/-1->0->-1 [3] 2/-1/-1->0->-1 comm 0x4bf151b0 nRanks 04 busId c1000
+nid005038:1523:2303 [0] NCCL INFO P2P Chunksize set to 524288
+nid005038:1526:2304 [2] NCCL INFO Channel 00/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1523:2303 [0] NCCL INFO Channel 00/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4bf151b0 nRanks 04
+nid005038:1526:2304 [2] NCCL INFO Channel 01/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1523:2303 [0] NCCL INFO Channel 01/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4bf151b0 nRanks 04
+nid005038:1526:2304 [2] NCCL INFO Channel 02/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1523:2303 [0] NCCL INFO Channel 02/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4bf151b0 nRanks 04
+nid005038:1526:2304 [2] NCCL INFO Channel 03/0 : 2[d9000] -> 3[de000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1523:2303 [0] NCCL INFO Channel 03/0 : 0[c1000] -> 2[d9000] via P2P/IPC comm 0x4bf151b0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 00/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 01/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 02/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 03/0 : 3[de000] -> 1[d6000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Channel 00/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Channel 01/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Channel 02/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Channel 03/0 : 1[d6000] -> 0[c1000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Connected all rings
+nid005038:1526:2304 [2] NCCL INFO Connected all rings
+nid005038:1526:2304 [2] NCCL INFO Channel 00/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Connected all rings
+nid005038:1523:2303 [0] NCCL INFO Connected all rings
+nid005038:1524:2305 [1] NCCL INFO Channel 00/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Channel 01/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1526:2304 [2] NCCL INFO Channel 01/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Channel 02/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1526:2304 [2] NCCL INFO Channel 02/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Channel 03/0 : 1[d6000] -> 3[de000] via P2P/IPC comm 0x4bf177d0 nRanks 04
+nid005038:1526:2304 [2] NCCL INFO Channel 03/0 : 2[d9000] -> 0[c1000] via P2P/IPC comm 0x4bf37910 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 00/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 01/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 02/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1527:2306 [3] NCCL INFO Channel 03/0 : 3[de000] -> 2[d9000] via P2P/IPC comm 0x4bf39ad0 nRanks 04
+nid005038:1524:2305 [1] NCCL INFO Connected all trees
+nid005038:1523:2303 [0] NCCL INFO Connected all trees
+nid005038:1527:2306 [3] NCCL INFO Connected all trees
+nid005038:1526:2304 [2] NCCL INFO Connected all trees
+nid005038:1524:2305 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1524:2305 [1] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1523:2303 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1527:2306 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1523:2303 [0] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1527:2306 [3] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1523:2303 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005038:1526:2304 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 256 | 256
+nid005038:1526:2304 [2] NCCL INFO 4 coll channels, 4 collnet channels, 0 nvls channels, 4 p2p channels, 2 p2p channels per peer
+nid005038:1523:2303 [0] NCCL INFO ncclCommInitRank comm 0x4bf151b0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId c1000 commId 0xabf62a07c9d3fecb localSize 272 used 480527392 bytes on core 49 - Init COMPLETE
+nid005038:1524:2305 [1] NCCL INFO ncclCommInitRank comm 0x4bf177d0 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId d6000 commId 0xabf62a07c9d3fecb localSize 272 used 430195744 bytes on core 10 - Init COMPLETE
+nid005038:1523:2303 [0] NCCL INFO Init timings: rank 0 nranks 4 total 0.55 (kernels 0.00, bootstrap 0.03, allgathers 0.01, topo 0.45, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1524:2305 [1] NCCL INFO Init timings: rank 1 nranks 4 total 0.54 (kernels 0.00, bootstrap 0.02, allgathers 0.03, topo 0.43, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1526:2304 [2] NCCL INFO ncclCommInitRank comm 0x4bf37910 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId d9000 commId 0xabf62a07c9d3fecb localSize 272 used 505693216 bytes on core 33 - Init COMPLETE
+nid005038:1527:2306 [3] NCCL INFO ncclCommInitRank comm 0x4bf39ad0 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId de000 commId 0xabf62a07c9d3fecb localSize 272 used 505693216 bytes on core 46 - Init COMPLETE
+nid005038:1526:2304 [2] NCCL INFO Init timings: rank 2 nranks 4 total 0.54 (kernels 0.00, bootstrap 0.02, allgathers 0.02, topo 0.44, graphs 0.00, connections 0.06, rest 0.00)
+nid005038:1527:2306 [3] NCCL INFO Init timings: rank 3 nranks 4 total 0.54 (kernels 0.00, bootstrap 0.02, allgathers 0.00, topo 0.46, graphs 0.00, connections 0.06, rest 0.00)
+[Rank 0] time (ms) | fwd_microstep: 10.10 | bwd_microstep: 19.38 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.90 | step_microstep: 16.17
+[Rank 0] time (ms) | fwd: 10.09 | bwd: 19.38 | bwd_inner: 8.45 | bwd_allreduce: 10.90 | step: 16.17
+[Rank 0] time (ms) | fwd_microstep: 9.71 | bwd_microstep: 19.33 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.85 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 9.71 | bwd: 19.33 | bwd_inner: 8.44 | bwd_allreduce: 10.85 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 9.62 | bwd_microstep: 19.64 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.18 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 9.61 | bwd: 19.64 | bwd_inner: 8.43 | bwd_allreduce: 11.18 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 9.68 | bwd_microstep: 19.30 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 10.87 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 9.67 | bwd: 19.30 | bwd_inner: 8.41 | bwd_allreduce: 10.87 | step: 16.15
+[Rank 0] time (ms) | fwd_microstep: 9.67 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.02 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 9.66 | bwd: 19.49 | bwd_inner: 8.44 | bwd_allreduce: 11.02 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 9.71 | bwd_microstep: 19.36 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.87 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 9.70 | bwd: 19.36 | bwd_inner: 8.45 | bwd_allreduce: 10.87 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 9.70 | bwd_microstep: 19.51 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.05 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 9.69 | bwd: 19.51 | bwd_inner: 8.43 | bwd_allreduce: 11.05 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 9.92 | bwd_microstep: 19.30 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 10.85 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 9.91 | bwd: 19.30 | bwd_inner: 8.42 | bwd_allreduce: 10.85 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 9.73 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.03 | step_microstep: 16.29
+[Rank 0] time (ms) | fwd: 9.72 | bwd: 19.49 | bwd_inner: 8.43 | bwd_allreduce: 11.03 | step: 16.29
+step=10 step_time=0.0482s tok/s=340021.17 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 9.82 | bwd_microstep: 19.26 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 10.81 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 9.81 | bwd: 19.26 | bwd_inner: 8.42 | bwd_allreduce: 10.81 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 9.75 | bwd_microstep: 19.46 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.98 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 9.75 | bwd: 19.46 | bwd_inner: 8.45 | bwd_allreduce: 10.98 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 9.88 | bwd_microstep: 19.26 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 10.83 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 9.87 | bwd: 19.26 | bwd_inner: 8.41 | bwd_allreduce: 10.83 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 9.84 | bwd_microstep: 19.54 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.08 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 9.84 | bwd: 19.54 | bwd_inner: 8.44 | bwd_allreduce: 11.08 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 10.10 | bwd_microstep: 19.24 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 10.80 | step_microstep: 15.89
+[Rank 0] time (ms) | fwd: 10.09 | bwd: 19.25 | bwd_inner: 8.42 | bwd_allreduce: 10.80 | step: 15.89
+[Rank 0] time (ms) | fwd_microstep: 9.87 | bwd_microstep: 19.47 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.98 | step_microstep: 15.88
+[Rank 0] time (ms) | fwd: 9.87 | bwd: 19.47 | bwd_inner: 8.45 | bwd_allreduce: 10.98 | step: 15.88
+[Rank 0] time (ms) | fwd_microstep: 9.89 | bwd_microstep: 19.35 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.89 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 9.89 | bwd: 19.35 | bwd_inner: 8.43 | bwd_allreduce: 10.89 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 9.97 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.02 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 9.96 | bwd: 19.49 | bwd_inner: 8.44 | bwd_allreduce: 11.02 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 9.96 | bwd_microstep: 19.40 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.94 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 9.96 | bwd: 19.40 | bwd_inner: 8.43 | bwd_allreduce: 10.94 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 9.95 | bwd_microstep: 19.52 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.05 | step_microstep: 16.25
+[Rank 0] time (ms) | fwd: 9.94 | bwd: 19.52 | bwd_inner: 8.45 | bwd_allreduce: 11.05 | step: 16.25
+step=20 step_time=0.0484s tok/s=338510.70 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 10.03 | bwd_microstep: 18.82 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.35 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 10.02 | bwd: 18.82 | bwd_inner: 8.44 | bwd_allreduce: 10.35 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 10.08 | bwd_microstep: 19.45 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.98 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 10.07 | bwd: 19.45 | bwd_inner: 8.44 | bwd_allreduce: 10.98 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 10.06 | bwd_microstep: 19.29 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 10.84 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 10.06 | bwd: 19.29 | bwd_inner: 8.42 | bwd_allreduce: 10.84 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 10.09 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.02 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 10.08 | bwd: 19.49 | bwd_inner: 8.44 | bwd_allreduce: 11.02 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 10.22 | bwd_microstep: 19.28 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.82 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 10.21 | bwd: 19.28 | bwd_inner: 8.43 | bwd_allreduce: 10.82 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 10.17 | bwd_microstep: 19.52 | bwd_inner_microstep: 8.47 | bwd_allreduce_microstep: 11.03 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 10.16 | bwd: 19.52 | bwd_inner: 8.47 | bwd_allreduce: 11.03 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 10.23 | bwd_microstep: 19.33 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 10.88 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 10.23 | bwd: 19.33 | bwd_inner: 8.42 | bwd_allreduce: 10.88 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 10.27 | bwd_microstep: 19.56 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.10 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 10.27 | bwd: 19.56 | bwd_inner: 8.43 | bwd_allreduce: 11.10 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 10.31 | bwd_microstep: 19.40 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.94 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 10.30 | bwd: 19.40 | bwd_inner: 8.43 | bwd_allreduce: 10.94 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 10.37 | bwd_microstep: 19.57 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.08 | step_microstep: 16.21
+[Rank 0] time (ms) | fwd: 10.36 | bwd: 19.57 | bwd_inner: 8.46 | bwd_allreduce: 11.08 | step: 16.21
+step=30 step_time=0.0488s tok/s=335543.30 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 10.40 | bwd_microstep: 18.65 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 10.20 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 10.40 | bwd: 18.65 | bwd_inner: 8.41 | bwd_allreduce: 10.20 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 10.41 | bwd_microstep: 19.60 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.11 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 10.40 | bwd: 19.60 | bwd_inner: 8.46 | bwd_allreduce: 11.11 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 10.48 | bwd_microstep: 19.45 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.99 | step_microstep: 15.88
+[Rank 0] time (ms) | fwd: 10.48 | bwd: 19.45 | bwd_inner: 8.43 | bwd_allreduce: 10.99 | step: 15.88
+[Rank 0] time (ms) | fwd_microstep: 10.52 | bwd_microstep: 19.60 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.12 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 10.51 | bwd: 19.60 | bwd_inner: 8.45 | bwd_allreduce: 11.12 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 10.56 | bwd_microstep: 19.76 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.29 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 10.55 | bwd: 19.76 | bwd_inner: 8.44 | bwd_allreduce: 11.29 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 10.62 | bwd_microstep: 19.58 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.10 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 10.61 | bwd: 19.58 | bwd_inner: 8.45 | bwd_allreduce: 11.10 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 10.69 | bwd_microstep: 19.41 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 10.97 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 10.68 | bwd: 19.42 | bwd_inner: 8.42 | bwd_allreduce: 10.97 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 10.68 | bwd_microstep: 19.56 | bwd_inner_microstep: 8.47 | bwd_allreduce_microstep: 11.06 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 10.68 | bwd: 19.56 | bwd_inner: 8.47 | bwd_allreduce: 11.06 | step: 15.94
+[Rank 0] time (ms) | fwd_microstep: 10.71 | bwd_microstep: 19.46 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.98 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 10.71 | bwd: 19.46 | bwd_inner: 8.45 | bwd_allreduce: 10.98 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 11.12 | bwd_microstep: 19.30 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 10.81 | step_microstep: 16.29
+[Rank 0] time (ms) | fwd: 11.12 | bwd: 19.30 | bwd_inner: 8.46 | bwd_allreduce: 10.81 | step: 16.29
+step=40 step_time=0.0494s tok/s=331453.99 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 10.84 | bwd_microstep: 18.96 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.50 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 10.83 | bwd: 18.96 | bwd_inner: 8.43 | bwd_allreduce: 10.50 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 10.92 | bwd_microstep: 19.51 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.03 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 10.92 | bwd: 19.51 | bwd_inner: 8.45 | bwd_allreduce: 11.03 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 10.91 | bwd_microstep: 19.55 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.09 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 10.90 | bwd: 19.55 | bwd_inner: 8.43 | bwd_allreduce: 11.09 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 10.98 | bwd_microstep: 19.65 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.19 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 10.97 | bwd: 19.65 | bwd_inner: 8.44 | bwd_allreduce: 11.19 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 11.07 | bwd_microstep: 19.36 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.91 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 11.07 | bwd: 19.36 | bwd_inner: 8.43 | bwd_allreduce: 10.91 | step: 15.94
+[Rank 0] time (ms) | fwd_microstep: 11.08 | bwd_microstep: 19.47 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.99 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 11.08 | bwd: 19.47 | bwd_inner: 8.45 | bwd_allreduce: 10.99 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 11.13 | bwd_microstep: 19.34 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.89 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 11.13 | bwd: 19.34 | bwd_inner: 8.43 | bwd_allreduce: 10.89 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 11.11 | bwd_microstep: 19.57 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.09 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 11.11 | bwd: 19.57 | bwd_inner: 8.45 | bwd_allreduce: 11.09 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 11.18 | bwd_microstep: 19.33 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.87 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 11.17 | bwd: 19.33 | bwd_inner: 8.44 | bwd_allreduce: 10.87 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 11.22 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.02 | step_microstep: 16.20
+[Rank 0] time (ms) | fwd: 11.21 | bwd: 19.49 | bwd_inner: 8.44 | bwd_allreduce: 11.02 | step: 16.20
+step=50 step_time=0.0496s tok/s=330309.90 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 11.25 | bwd_microstep: 18.65 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.18 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 11.24 | bwd: 18.65 | bwd_inner: 8.44 | bwd_allreduce: 10.18 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 11.29 | bwd_microstep: 19.65 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.17 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 11.29 | bwd: 19.65 | bwd_inner: 8.45 | bwd_allreduce: 11.17 | step: 16.15
+[Rank 0] time (ms) | fwd_microstep: 11.38 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.03 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 11.37 | bwd: 19.49 | bwd_inner: 8.43 | bwd_allreduce: 11.03 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 11.43 | bwd_microstep: 19.60 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.13 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 11.42 | bwd: 19.60 | bwd_inner: 8.44 | bwd_allreduce: 11.13 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 11.44 | bwd_microstep: 19.47 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.01 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 11.43 | bwd: 19.47 | bwd_inner: 8.43 | bwd_allreduce: 11.01 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 11.49 | bwd_microstep: 19.55 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.07 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 11.49 | bwd: 19.55 | bwd_inner: 8.45 | bwd_allreduce: 11.07 | step: 15.94
+[Rank 0] time (ms) | fwd_microstep: 11.51 | bwd_microstep: 19.37 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.91 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 11.51 | bwd: 19.37 | bwd_inner: 8.43 | bwd_allreduce: 10.91 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 11.59 | bwd_microstep: 19.65 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.17 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 11.59 | bwd: 19.65 | bwd_inner: 8.45 | bwd_allreduce: 11.17 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 11.66 | bwd_microstep: 19.31 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.85 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 11.66 | bwd: 19.31 | bwd_inner: 8.43 | bwd_allreduce: 10.85 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 11.63 | bwd_microstep: 19.66 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.17 | step_microstep: 16.22
+[Rank 0] time (ms) | fwd: 11.63 | bwd: 19.66 | bwd_inner: 8.45 | bwd_allreduce: 11.17 | step: 16.22
+step=60 step_time=0.0502s tok/s=326477.22 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 11.67 | bwd_microstep: 18.63 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.17 | step_microstep: 15.86
+[Rank 0] time (ms) | fwd: 11.66 | bwd: 18.63 | bwd_inner: 8.43 | bwd_allreduce: 10.17 | step: 15.86
+[Rank 0] time (ms) | fwd_microstep: 11.75 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.02 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 11.75 | bwd: 19.49 | bwd_inner: 8.44 | bwd_allreduce: 11.02 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 11.75 | bwd_microstep: 19.41 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.95 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 11.75 | bwd: 19.41 | bwd_inner: 8.44 | bwd_allreduce: 10.95 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 11.84 | bwd_microstep: 19.69 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.22 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 11.84 | bwd: 19.69 | bwd_inner: 8.44 | bwd_allreduce: 11.22 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 11.78 | bwd_microstep: 19.54 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.08 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 11.77 | bwd: 19.54 | bwd_inner: 8.43 | bwd_allreduce: 11.08 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 11.89 | bwd_microstep: 19.55 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.08 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 11.88 | bwd: 19.55 | bwd_inner: 8.44 | bwd_allreduce: 11.08 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 11.96 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.02 | step_microstep: 15.83
+[Rank 0] time (ms) | fwd: 11.96 | bwd: 19.49 | bwd_inner: 8.43 | bwd_allreduce: 11.02 | step: 15.88
+[Rank 0] time (ms) | fwd_microstep: 12.03 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.03 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 12.02 | bwd: 19.49 | bwd_inner: 8.44 | bwd_allreduce: 11.03 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 12.01 | bwd_microstep: 19.40 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.94 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 12.00 | bwd: 19.40 | bwd_inner: 8.43 | bwd_allreduce: 10.94 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 12.08 | bwd_microstep: 19.57 | bwd_inner_microstep: 8.47 | bwd_allreduce_microstep: 11.07 | step_microstep: 16.25
+[Rank 0] time (ms) | fwd: 12.08 | bwd: 19.57 | bwd_inner: 8.47 | bwd_allreduce: 11.07 | step: 16.25
+step=70 step_time=0.0506s tok/s=323829.85 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 12.19 | bwd_microstep: 18.64 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.18 | step_microstep: 15.89
+[Rank 0] time (ms) | fwd: 12.18 | bwd: 18.64 | bwd_inner: 8.44 | bwd_allreduce: 10.18 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 12.16 | bwd_microstep: 19.67 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.21 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 12.15 | bwd: 19.67 | bwd_inner: 8.43 | bwd_allreduce: 11.21 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 12.24 | bwd_microstep: 19.55 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 11.12 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 12.24 | bwd: 19.55 | bwd_inner: 8.40 | bwd_allreduce: 11.12 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 12.26 | bwd_microstep: 19.60 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.12 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 12.25 | bwd: 19.60 | bwd_inner: 8.45 | bwd_allreduce: 11.12 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 12.39 | bwd_microstep: 19.38 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.92 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 12.38 | bwd: 19.38 | bwd_inner: 8.43 | bwd_allreduce: 10.92 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 12.30 | bwd_microstep: 19.97 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.50 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 12.29 | bwd: 19.97 | bwd_inner: 8.44 | bwd_allreduce: 11.50 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 12.51 | bwd_microstep: 19.42 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 10.98 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 12.51 | bwd: 19.42 | bwd_inner: 8.41 | bwd_allreduce: 10.98 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 12.46 | bwd_microstep: 19.66 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.18 | step_microstep: 15.90
+[Rank 0] time (ms) | fwd: 12.46 | bwd: 19.66 | bwd_inner: 8.45 | bwd_allreduce: 11.18 | step: 15.90
+[Rank 0] time (ms) | fwd_microstep: 12.51 | bwd_microstep: 19.68 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 11.24 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 12.51 | bwd: 19.68 | bwd_inner: 8.41 | bwd_allreduce: 11.24 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 12.57 | bwd_microstep: 19.56 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.09 | step_microstep: 16.32
+[Rank 0] time (ms) | fwd: 12.57 | bwd: 19.56 | bwd_inner: 8.44 | bwd_allreduce: 11.09 | step: 16.32
+step=80 step_time=0.0512s tok/s=319899.81 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 12.55 | bwd_microstep: 18.63 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 10.14 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 12.55 | bwd: 18.63 | bwd_inner: 8.46 | bwd_allreduce: 10.14 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 12.55 | bwd_microstep: 19.76 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.30 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 12.55 | bwd: 19.76 | bwd_inner: 8.43 | bwd_allreduce: 11.30 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 12.67 | bwd_microstep: 19.52 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 11.08 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 12.67 | bwd: 19.52 | bwd_inner: 8.41 | bwd_allreduce: 11.08 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 12.63 | bwd_microstep: 19.73 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.24 | step_microstep: 15.84
+[Rank 0] time (ms) | fwd: 12.63 | bwd: 19.73 | bwd_inner: 8.46 | bwd_allreduce: 11.24 | step: 15.88
+[Rank 0] time (ms) | fwd_microstep: 12.75 | bwd_microstep: 19.45 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.96 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 12.75 | bwd: 19.45 | bwd_inner: 8.45 | bwd_allreduce: 10.96 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 12.76 | bwd_microstep: 19.69 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.21 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 12.75 | bwd: 19.69 | bwd_inner: 8.44 | bwd_allreduce: 11.21 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 12.83 | bwd_microstep: 19.45 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.99 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 12.83 | bwd: 19.45 | bwd_inner: 8.43 | bwd_allreduce: 10.99 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 12.92 | bwd_microstep: 19.58 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.11 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 12.92 | bwd: 19.58 | bwd_inner: 8.44 | bwd_allreduce: 11.11 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 12.83 | bwd_microstep: 19.58 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.09 | step_microstep: 15.88
+[Rank 0] time (ms) | fwd: 12.83 | bwd: 19.58 | bwd_inner: 8.45 | bwd_allreduce: 11.09 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 13.54 | bwd_microstep: 19.24 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 10.75 | step_microstep: 16.23
+[Rank 0] time (ms) | fwd: 13.53 | bwd: 19.24 | bwd_inner: 8.46 | bwd_allreduce: 10.75 | step: 16.23
+step=90 step_time=0.0517s tok/s=316787.67 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 12.97 | bwd_microstep: 18.66 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.20 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 12.96 | bwd: 18.66 | bwd_inner: 8.44 | bwd_allreduce: 10.20 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 13.04 | bwd_microstep: 19.73 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.25 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 13.04 | bwd: 19.73 | bwd_inner: 8.45 | bwd_allreduce: 11.25 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 13.09 | bwd_microstep: 19.59 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.13 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 13.08 | bwd: 19.59 | bwd_inner: 8.44 | bwd_allreduce: 11.13 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 13.12 | bwd_microstep: 19.66 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.17 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 13.11 | bwd: 19.66 | bwd_inner: 8.46 | bwd_allreduce: 11.17 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 13.16 | bwd_microstep: 19.65 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 11.20 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 13.16 | bwd: 19.65 | bwd_inner: 8.42 | bwd_allreduce: 11.20 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 13.26 | bwd_microstep: 19.59 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.12 | step_microstep: 15.87
+[Rank 0] time (ms) | fwd: 13.26 | bwd: 19.59 | bwd_inner: 8.44 | bwd_allreduce: 11.12 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 13.26 | bwd_microstep: 19.62 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.16 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 13.26 | bwd: 19.62 | bwd_inner: 8.43 | bwd_allreduce: 11.16 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 13.26 | bwd_microstep: 19.90 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.41 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 13.25 | bwd: 19.90 | bwd_inner: 8.46 | bwd_allreduce: 11.41 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 13.38 | bwd_microstep: 19.55 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.07 | step_microstep: 15.87
+[Rank 0] time (ms) | fwd: 13.37 | bwd: 19.55 | bwd_inner: 8.44 | bwd_allreduce: 11.07 | step: 15.87
+[Rank 0] time (ms) | fwd_microstep: 13.31 | bwd_microstep: 19.68 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.21 | step_microstep: 16.29
+[Rank 0] time (ms) | fwd: 13.31 | bwd: 19.68 | bwd_inner: 8.44 | bwd_allreduce: 11.21 | step: 16.29
+step=100 step_time=0.0520s tok/s=315324.45 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 13.37 | bwd_microstep: 18.62 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 10.17 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 13.37 | bwd: 18.62 | bwd_inner: 8.42 | bwd_allreduce: 10.17 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 13.45 | bwd_microstep: 19.79 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.32 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 13.45 | bwd: 19.79 | bwd_inner: 8.44 | bwd_allreduce: 11.32 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 13.56 | bwd_microstep: 19.52 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.06 | step_microstep: 15.89
+[Rank 0] time (ms) | fwd: 13.56 | bwd: 19.52 | bwd_inner: 8.43 | bwd_allreduce: 11.06 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 13.55 | bwd_microstep: 19.66 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.18 | step_microstep: 15.86
+[Rank 0] time (ms) | fwd: 13.55 | bwd: 19.66 | bwd_inner: 8.45 | bwd_allreduce: 11.18 | step: 15.86
+[Rank 0] time (ms) | fwd_microstep: 13.64 | bwd_microstep: 19.53 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.07 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 13.63 | bwd: 19.53 | bwd_inner: 8.43 | bwd_allreduce: 11.07 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 13.63 | bwd_microstep: 19.61 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.12 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 13.62 | bwd: 19.61 | bwd_inner: 8.46 | bwd_allreduce: 11.12 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 13.70 | bwd_microstep: 19.43 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.96 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 13.70 | bwd: 19.43 | bwd_inner: 8.43 | bwd_allreduce: 10.96 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 13.77 | bwd_microstep: 19.68 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.19 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 13.76 | bwd: 19.68 | bwd_inner: 8.46 | bwd_allreduce: 11.19 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 13.75 | bwd_microstep: 19.58 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.11 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 13.74 | bwd: 19.58 | bwd_inner: 8.44 | bwd_allreduce: 11.11 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 13.87 | bwd_microstep: 19.62 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.15 | step_microstep: 16.22
+[Rank 0] time (ms) | fwd: 13.87 | bwd: 19.62 | bwd_inner: 8.43 | bwd_allreduce: 11.15 | step: 16.22
+step=110 step_time=0.0524s tok/s=312610.76 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 13.85 | bwd_microstep: 18.64 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.16 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 13.85 | bwd: 18.64 | bwd_inner: 8.45 | bwd_allreduce: 10.16 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 13.87 | bwd_microstep: 19.71 | bwd_inner_microstep: 8.47 | bwd_allreduce_microstep: 11.21 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 13.86 | bwd: 19.71 | bwd_inner: 8.47 | bwd_allreduce: 11.21 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 13.93 | bwd_microstep: 19.50 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.02 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 13.93 | bwd: 19.50 | bwd_inner: 8.45 | bwd_allreduce: 11.02 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 13.96 | bwd_microstep: 19.74 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.28 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 13.95 | bwd: 19.74 | bwd_inner: 8.44 | bwd_allreduce: 11.28 | step: 16.13
+[Rank 0] time (ms) | fwd_microstep: 14.18 | bwd_microstep: 19.52 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.05 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 14.17 | bwd: 19.52 | bwd_inner: 8.44 | bwd_allreduce: 11.05 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 14.45 | bwd_microstep: 19.54 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.05 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 14.44 | bwd: 19.54 | bwd_inner: 8.46 | bwd_allreduce: 11.05 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 14.22 | bwd_microstep: 19.52 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 11.06 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 14.21 | bwd: 19.52 | bwd_inner: 8.42 | bwd_allreduce: 11.06 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 14.27 | bwd_microstep: 19.76 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.29 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 14.27 | bwd: 19.76 | bwd_inner: 8.43 | bwd_allreduce: 11.29 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 14.19 | bwd_microstep: 19.54 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.08 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 14.18 | bwd: 19.54 | bwd_inner: 8.43 | bwd_allreduce: 11.08 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 14.29 | bwd_microstep: 19.72 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.24 | step_microstep: 16.26
+[Rank 0] time (ms) | fwd: 14.29 | bwd: 19.72 | bwd_inner: 8.46 | bwd_allreduce: 11.24 | step: 16.26
+step=120 step_time=0.0530s tok/s=309385.68 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 14.32 | bwd_microstep: 18.63 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.15 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 14.31 | bwd: 18.63 | bwd_inner: 8.45 | bwd_allreduce: 10.15 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 14.37 | bwd_microstep: 19.69 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.23 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 14.37 | bwd: 19.69 | bwd_inner: 8.43 | bwd_allreduce: 11.23 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 14.40 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.03 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 14.39 | bwd: 19.49 | bwd_inner: 8.43 | bwd_allreduce: 11.03 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 14.42 | bwd_microstep: 19.77 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.30 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 14.41 | bwd: 19.77 | bwd_inner: 8.45 | bwd_allreduce: 11.30 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 14.43 | bwd_microstep: 19.64 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.17 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 14.42 | bwd: 19.64 | bwd_inner: 8.44 | bwd_allreduce: 11.17 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 14.43 | bwd_microstep: 19.80 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.32 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 14.42 | bwd: 19.80 | bwd_inner: 8.45 | bwd_allreduce: 11.32 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 14.56 | bwd_microstep: 19.63 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.15 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 14.56 | bwd: 19.63 | bwd_inner: 8.45 | bwd_allreduce: 11.15 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 14.56 | bwd_microstep: 19.84 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.36 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 14.55 | bwd: 19.84 | bwd_inner: 8.44 | bwd_allreduce: 11.36 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 14.63 | bwd_microstep: 19.60 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.14 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 14.62 | bwd: 19.60 | bwd_inner: 8.43 | bwd_allreduce: 11.14 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 14.63 | bwd_microstep: 19.89 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.40 | step_microstep: 16.30
+[Rank 0] time (ms) | fwd: 14.63 | bwd: 19.89 | bwd_inner: 8.46 | bwd_allreduce: 11.40 | step: 16.30
+step=130 step_time=0.0535s tok/s=306061.52 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 14.72 | bwd_microstep: 18.68 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 10.19 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 14.72 | bwd: 18.68 | bwd_inner: 8.46 | bwd_allreduce: 10.19 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 14.80 | bwd_microstep: 19.88 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.41 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 14.79 | bwd: 19.88 | bwd_inner: 8.44 | bwd_allreduce: 11.41 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 14.72 | bwd_microstep: 19.81 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.35 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 14.71 | bwd: 19.81 | bwd_inner: 8.43 | bwd_allreduce: 11.35 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 14.88 | bwd_microstep: 19.79 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.31 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 14.88 | bwd: 19.79 | bwd_inner: 8.46 | bwd_allreduce: 11.31 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 14.77 | bwd_microstep: 19.80 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.33 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 14.77 | bwd: 19.80 | bwd_inner: 8.44 | bwd_allreduce: 11.33 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 14.99 | bwd_microstep: 19.76 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.27 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 14.98 | bwd: 19.76 | bwd_inner: 8.46 | bwd_allreduce: 11.27 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 14.95 | bwd_microstep: 19.57 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.09 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 14.94 | bwd: 19.57 | bwd_inner: 8.45 | bwd_allreduce: 11.09 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 15.03 | bwd_microstep: 19.78 | bwd_inner_microstep: 8.48 | bwd_allreduce_microstep: 11.28 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 15.02 | bwd: 19.78 | bwd_inner: 8.48 | bwd_allreduce: 11.28 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 15.09 | bwd_microstep: 19.71 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 11.27 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 15.08 | bwd: 19.71 | bwd_inner: 8.42 | bwd_allreduce: 11.27 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 15.50 | bwd_microstep: 19.40 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.92 | step_microstep: 16.22
+[Rank 0] time (ms) | fwd: 15.50 | bwd: 19.40 | bwd_inner: 8.45 | bwd_allreduce: 10.92 | step: 16.31
+step=140 step_time=0.0539s tok/s=303850.88 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 15.16 | bwd_microstep: 18.62 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.15 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 15.16 | bwd: 18.62 | bwd_inner: 8.44 | bwd_allreduce: 10.15 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 15.16 | bwd_microstep: 19.91 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.43 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 15.16 | bwd: 19.91 | bwd_inner: 8.46 | bwd_allreduce: 11.43 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 15.25 | bwd_microstep: 19.64 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 11.20 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 15.24 | bwd: 19.64 | bwd_inner: 8.41 | bwd_allreduce: 11.20 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 15.29 | bwd_microstep: 19.88 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.39 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 15.29 | bwd: 19.88 | bwd_inner: 8.46 | bwd_allreduce: 11.39 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 15.38 | bwd_microstep: 19.64 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.15 | step_microstep: 15.90
+[Rank 0] time (ms) | fwd: 15.38 | bwd: 19.64 | bwd_inner: 8.46 | bwd_allreduce: 11.15 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 15.42 | bwd_microstep: 19.73 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 11.28 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 15.42 | bwd: 19.73 | bwd_inner: 8.42 | bwd_allreduce: 11.28 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 15.27 | bwd_microstep: 19.82 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.35 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 15.27 | bwd: 19.82 | bwd_inner: 8.44 | bwd_allreduce: 11.35 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 15.45 | bwd_microstep: 19.85 | bwd_inner_microstep: 8.47 | bwd_allreduce_microstep: 11.35 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 15.44 | bwd: 19.85 | bwd_inner: 8.47 | bwd_allreduce: 11.35 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 15.51 | bwd_microstep: 19.69 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.21 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 15.51 | bwd: 19.69 | bwd_inner: 8.45 | bwd_allreduce: 11.21 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 15.54 | bwd_microstep: 19.84 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.36 | step_microstep: 16.25
+[Rank 0] time (ms) | fwd: 15.53 | bwd: 19.84 | bwd_inner: 8.45 | bwd_allreduce: 11.36 | step: 16.25
+step=150 step_time=0.0543s tok/s=301708.67 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 15.55 | bwd_microstep: 18.73 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.27 | step_microstep: 15.87
+[Rank 0] time (ms) | fwd: 15.54 | bwd: 18.73 | bwd_inner: 8.43 | bwd_allreduce: 10.27 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 15.58 | bwd_microstep: 19.99 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.53 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 15.58 | bwd: 19.99 | bwd_inner: 8.43 | bwd_allreduce: 11.53 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 15.68 | bwd_microstep: 19.81 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 11.35 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 15.67 | bwd: 19.81 | bwd_inner: 8.43 | bwd_allreduce: 11.35 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 15.75 | bwd_microstep: 20.94 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 12.45 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 15.74 | bwd: 20.94 | bwd_inner: 8.46 | bwd_allreduce: 12.45 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 15.79 | bwd_microstep: 20.06 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 11.61 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 15.78 | bwd: 20.06 | bwd_inner: 8.43 | bwd_allreduce: 11.61 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 15.80 | bwd_microstep: 20.25 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.78 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 15.79 | bwd: 20.25 | bwd_inner: 8.44 | bwd_allreduce: 11.78 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 15.82 | bwd_microstep: 19.92 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.45 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 15.82 | bwd: 19.92 | bwd_inner: 8.43 | bwd_allreduce: 11.45 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 15.88 | bwd_microstep: 19.98 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.50 | step_microstep: 15.90
+[Rank 0] time (ms) | fwd: 15.88 | bwd: 19.98 | bwd_inner: 8.45 | bwd_allreduce: 11.50 | step: 15.90
+[Rank 0] time (ms) | fwd_microstep: 15.94 | bwd_microstep: 20.83 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 12.37 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 15.94 | bwd: 20.83 | bwd_inner: 8.43 | bwd_allreduce: 12.37 | step: 16.16
+[Rank 0] time (ms) | fwd_microstep: 15.99 | bwd_microstep: 19.47 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.99 | step_microstep: 16.23
+[Rank 0] time (ms) | fwd: 15.99 | bwd: 19.47 | bwd_inner: 8.45 | bwd_allreduce: 10.99 | step: 16.24
+step=160 step_time=0.0544s tok/s=301107.39 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 16.05 | bwd_microstep: 18.65 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.18 | step_microstep: 15.88
+[Rank 0] time (ms) | fwd: 16.04 | bwd: 18.65 | bwd_inner: 8.44 | bwd_allreduce: 10.18 | step: 15.89
+[Rank 0] time (ms) | fwd_microstep: 16.15 | bwd_microstep: 19.38 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.90 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 16.14 | bwd: 19.38 | bwd_inner: 8.45 | bwd_allreduce: 10.90 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 16.15 | bwd_microstep: 19.29 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.83 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 16.15 | bwd: 19.29 | bwd_inner: 8.43 | bwd_allreduce: 10.83 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 16.26 | bwd_microstep: 19.29 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.82 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 16.25 | bwd: 19.29 | bwd_inner: 8.44 | bwd_allreduce: 10.82 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 16.30 | bwd_microstep: 19.35 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.89 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 16.30 | bwd: 19.35 | bwd_inner: 8.43 | bwd_allreduce: 10.89 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 16.30 | bwd_microstep: 19.37 | bwd_inner_microstep: 8.47 | bwd_allreduce_microstep: 10.87 | step_microstep: 15.90
+[Rank 0] time (ms) | fwd: 16.29 | bwd: 19.37 | bwd_inner: 8.47 | bwd_allreduce: 10.87 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 16.43 | bwd_microstep: 19.28 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.82 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 16.43 | bwd: 19.28 | bwd_inner: 8.43 | bwd_allreduce: 10.82 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 16.51 | bwd_microstep: 19.32 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 10.83 | step_microstep: 15.89
+[Rank 0] time (ms) | fwd: 16.51 | bwd: 19.32 | bwd_inner: 8.46 | bwd_allreduce: 10.83 | step: 15.90
+[Rank 0] time (ms) | fwd_microstep: 16.47 | bwd_microstep: 19.28 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.82 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 16.47 | bwd: 19.28 | bwd_inner: 8.44 | bwd_allreduce: 10.82 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 16.55 | bwd_microstep: 19.59 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.12 | step_microstep: 16.47
+[Rank 0] time (ms) | fwd: 16.55 | bwd: 19.59 | bwd_inner: 8.44 | bwd_allreduce: 11.12 | step: 16.47
+step=170 step_time=0.0553s tok/s=296234.26 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 17.30 | bwd_microstep: 18.63 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.16 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 17.29 | bwd: 18.63 | bwd_inner: 8.44 | bwd_allreduce: 10.16 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 16.92 | bwd_microstep: 19.31 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.84 | step_microstep: 15.85
+[Rank 0] time (ms) | fwd: 16.92 | bwd: 19.31 | bwd_inner: 8.45 | bwd_allreduce: 10.84 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 16.88 | bwd_microstep: 19.22 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.75 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 16.88 | bwd: 19.22 | bwd_inner: 8.44 | bwd_allreduce: 10.75 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 16.84 | bwd_microstep: 19.64 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.17 | step_microstep: 15.91
+[Rank 0] time (ms) | fwd: 16.83 | bwd: 19.64 | bwd_inner: 8.44 | bwd_allreduce: 11.17 | step: 15.91
+[Rank 0] time (ms) | fwd_microstep: 17.00 | bwd_microstep: 19.34 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.88 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 16.99 | bwd: 19.34 | bwd_inner: 8.43 | bwd_allreduce: 10.88 | step: 15.94
+[Rank 0] time (ms) | fwd_microstep: 16.89 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.00 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 16.89 | bwd: 19.49 | bwd_inner: 8.46 | bwd_allreduce: 11.00 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 17.39 | bwd_microstep: 19.16 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.67 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 17.39 | bwd: 19.16 | bwd_inner: 8.45 | bwd_allreduce: 10.68 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 17.10 | bwd_microstep: 19.37 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.89 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 17.09 | bwd: 19.38 | bwd_inner: 8.45 | bwd_allreduce: 10.89 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 17.23 | bwd_microstep: 19.27 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.80 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 17.22 | bwd: 19.27 | bwd_inner: 8.44 | bwd_allreduce: 10.80 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 17.11 | bwd_microstep: 19.58 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.10 | step_microstep: 16.14
+[Rank 0] time (ms) | fwd: 17.11 | bwd: 19.58 | bwd_inner: 8.46 | bwd_allreduce: 11.10 | step: 16.14
+step=180 step_time=0.0556s tok/s=294877.04 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 17.23 | bwd_microstep: 18.63 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.15 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 17.23 | bwd: 18.63 | bwd_inner: 8.45 | bwd_allreduce: 10.15 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 17.31 | bwd_microstep: 19.36 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.87 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 17.30 | bwd: 19.36 | bwd_inner: 8.45 | bwd_allreduce: 10.87 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 17.25 | bwd_microstep: 19.36 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.90 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 17.24 | bwd: 19.36 | bwd_inner: 8.43 | bwd_allreduce: 10.90 | step: 15.94
+[Rank 0] time (ms) | fwd_microstep: 17.38 | bwd_microstep: 19.50 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.02 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 17.37 | bwd: 19.50 | bwd_inner: 8.45 | bwd_allreduce: 11.02 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 17.33 | bwd_microstep: 19.37 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.89 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 17.33 | bwd: 19.37 | bwd_inner: 8.45 | bwd_allreduce: 10.89 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 17.47 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.00 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 17.47 | bwd: 19.49 | bwd_inner: 8.46 | bwd_allreduce: 11.00 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 17.55 | bwd_microstep: 19.27 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.81 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 17.54 | bwd: 19.27 | bwd_inner: 8.43 | bwd_allreduce: 10.81 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 17.52 | bwd_microstep: 19.67 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.20 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 17.51 | bwd: 19.67 | bwd_inner: 8.44 | bwd_allreduce: 11.20 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 17.62 | bwd_microstep: 19.37 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 10.90 | step_microstep: 15.87
+[Rank 0] time (ms) | fwd: 17.62 | bwd: 19.37 | bwd_inner: 8.44 | bwd_allreduce: 10.90 | step: 15.87
+[Rank 0] time (ms) | fwd_microstep: 18.28 | bwd_microstep: 19.18 | bwd_inner_microstep: 8.48 | bwd_allreduce_microstep: 10.67 | step_microstep: 16.34
+[Rank 0] time (ms) | fwd: 18.28 | bwd: 19.18 | bwd_inner: 8.48 | bwd_allreduce: 10.67 | step: 16.34
+step=190 step_time=0.0565s tok/s=290117.49 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 17.82 | bwd_microstep: 18.67 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.19 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 17.82 | bwd: 18.67 | bwd_inner: 8.45 | bwd_allreduce: 10.19 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 17.81 | bwd_microstep: 19.55 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.05 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 17.80 | bwd: 19.55 | bwd_inner: 8.46 | bwd_allreduce: 11.05 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 17.89 | bwd_microstep: 19.48 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 11.01 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 17.88 | bwd: 19.48 | bwd_inner: 8.44 | bwd_allreduce: 11.01 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 17.95 | bwd_microstep: 19.53 | bwd_inner_microstep: 8.49 | bwd_allreduce_microstep: 11.01 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 17.95 | bwd: 19.53 | bwd_inner: 8.49 | bwd_allreduce: 11.01 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 17.90 | bwd_microstep: 19.37 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 10.89 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 17.90 | bwd: 19.37 | bwd_inner: 8.46 | bwd_allreduce: 10.89 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 17.99 | bwd_microstep: 19.48 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.00 | step_microstep: 15.94
+[Rank 0] time (ms) | fwd: 17.99 | bwd: 19.48 | bwd_inner: 8.45 | bwd_allreduce: 11.00 | step: 15.94
+[Rank 0] time (ms) | fwd_microstep: 18.09 | bwd_microstep: 19.29 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 10.83 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 18.08 | bwd: 19.29 | bwd_inner: 8.43 | bwd_allreduce: 10.83 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 18.14 | bwd_microstep: 19.49 | bwd_inner_microstep: 8.46 | bwd_allreduce_microstep: 11.00 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 18.14 | bwd: 19.49 | bwd_inner: 8.46 | bwd_allreduce: 11.00 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 18.23 | bwd_microstep: 19.36 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 10.88 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 18.23 | bwd: 19.36 | bwd_inner: 8.45 | bwd_allreduce: 10.88 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 18.27 | bwd_microstep: 19.51 | bwd_inner_microstep: 8.45 | bwd_allreduce_microstep: 11.03 | step_microstep: 16.27
+[Rank 0] time (ms) | fwd: 18.27 | bwd: 19.51 | bwd_inner: 8.45 | bwd_allreduce: 11.03 | step: 16.27
+step=200 step_time=0.0568s tok/s=288663.32 mem_alloc=2466733056
+Saved run summary to results/phase1_4gpu_summary.json
+nid005038:1523:1523 [0] NCCL INFO comm 0x4b0e68c0 rank 0 nranks 4 cudaDev 0 busId c1000 - Destroy COMPLETE
+nid005038:1524:1524 [1] NCCL INFO comm 0x4b0e5200 rank 1 nranks 4 cudaDev 1 busId d6000 - Destroy COMPLETE
+nid005038:1527:1527 [3] NCCL INFO comm 0x4b107b00 rank 3 nranks 4 cudaDev 3 busId de000 - Destroy COMPLETE
+nid005038:1526:1526 [2] NCCL INFO comm 0x4b106dc0 rank 2 nranks 4 cudaDev 2 busId d9000 - Destroy COMPLETE
+nid005038:1523:1523 [0] NCCL INFO comm 0x4775f8b0 rank 0 nranks 1 cudaDev 0 busId c1000 - Destroy COMPLETE
+nid005038:1523:1523 [0] NCCL INFO comm 0x4b1a2120 rank 0 nranks 4 cudaDev 0 busId c1000 - Destroy COMPLETE
+nid005038:1527:1527 [3] NCCL INFO comm 0x47bb8450 rank 0 nranks 1 cudaDev 3 busId de000 - Destroy COMPLETE
+nid005038:1526:1526 [2] NCCL INFO comm 0x46b734a0 rank 0 nranks 1 cudaDev 2 busId d9000 - Destroy COMPLETE
+nid005038:1524:1524 [1] NCCL INFO comm 0x46f53040 rank 0 nranks 1 cudaDev 1 busId d6000 - Destroy COMPLETE
+nid005038:1523:1523 [0] NCCL INFO comm 0x4bf151b0 rank 0 nranks 4 cudaDev 0 busId c1000 - Destroy COMPLETE
+nid005038:1524:1524 [1] NCCL INFO comm 0x4b1a0a60 rank 1 nranks 4 cudaDev 1 busId d6000 - Destroy COMPLETE
+nid005038:1527:1527 [3] NCCL INFO comm 0x4b1c3360 rank 3 nranks 4 cudaDev 3 busId de000 - Destroy COMPLETE
+nid005038:1526:1526 [2] NCCL INFO comm 0x4b1c2620 rank 2 nranks 4 cudaDev 2 busId d9000 - Destroy COMPLETE
+nid005038:1524:1524 [1] NCCL INFO comm 0x4bf177d0 rank 1 nranks 4 cudaDev 1 busId d6000 - Destroy COMPLETE
+nid005038:1526:1526 [2] NCCL INFO comm 0x4bf37910 rank 2 nranks 4 cudaDev 2 busId d9000 - Destroy COMPLETE
+nid005038:1527:1527 [3] NCCL INFO comm 0x4bf39ad0 rank 3 nranks 4 cudaDev 3 busId de000 - Destroy COMPLETE

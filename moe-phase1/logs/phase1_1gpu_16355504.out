@@ -1,0 +1,937 @@
+PROJECT_ROOT=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1
+VENV_PATH=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1/.venv
+HOST=nid005079
+SLURM_JOB_ID=16355504
+cuda_available: True
+device_count: 1
+AMD Instinct MI250X
+{
+  "run_name": "phase1_1gpu",
+  "metadata": {
+    "seed": 42,
+    "command": "src/train.py --config configs/base.json --deepspeed --ds_config configs/ds_config_moe.json --run_name phase1_1gpu --out_dir results",
+    "git_commit": "unknown",
+    "config_path": "configs/base.json",
+    "config_copy_path": "results/phase1_1gpu_config_used.json",
+    "env": {
+      "python_version": "3.12.3 (main, Jan 22 2026, 20:57:42) [GCC 13.3.0]",
+      "torch_version": "2.9.1+rocm6.4",
+      "cuda_available": "True",
+      "cuda_version": "None",
+      "cudnn_version": "3004000",
+      "deepspeed_version": "0.18.6"
+    },
+    "deepspeed_requested": true,
+    "nccl_debug": "INFO"
+  }
+}
+nid005079:68532:68532 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005079:68532:68532 [0] NCCL INFO Bootstrap : Using nmn0:10.120.24.122<0>
+nid005079:68532:68532 [0] NCCL INFO ROCr version 1.15
+nid005079:68532:68532 [0] NCCL INFO Dmabuf feature disabled without NCCL_DMABUF_ENABLE=1
+nid005079:68532:68532 [0] NCCL INFO Kernel version: 6.4.0-150600.23.73_15.0.14-cray_shasta_c
+nid005079:68532:68532 [0] NCCL INFO RCCL version : 2.22.3-HEAD:7d8d67c
+HIP version  : 6.4.43484-123eb5128
+ROCm version : 6.4.2.0-120-e7d83f5
+Hostname     : nid005079
+Librccl path : /opt/venv/lib/python3.12/site-packages/torch/lib/librccl.so
+nid005079:68532:68532 [0] NCCL INFO Comm config Blocking set to 1
+nid005079:68532:69108 [0] NCCL INFO NET/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005079:68532:69108 [0] NCCL INFO NET/Plugin: Using internal network plugin.
+nid005079:68532:69108 [0] NCCL INFO NET/IB : No device found.
+nid005079:68532:69108 [0] NCCL INFO NET/Socket : Using [0]nmn0:10.120.24.122<0> [1]hsn0:10.253.8.64<0> [2]hsn1:10.253.8.63<0> [3]hsn2:10.253.8.31<0> [4]hsn3:10.253.8.32<0>
+nid005079:68532:69108 [0] NCCL INFO Using network Socket
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 11
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 4
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 10
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 9
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69108 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+nid005079:68532:69108 [0] NCCL INFO [node_id = 7; gpu_id = 3099; unique_id = 12806842524387570764; location_id = 52736; bdf = 52736; domain = 0; partition = 0], 
+nid005079:68532:69108 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69108 [0] NCCL INFO ncclCommInitRank comm 0x4a79eb80 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 commId 0xeaca36bf7479acbd - Init START
+nid005079:68532:69108 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69108 [0] NCCL INFO Setting affinity for GPU 0 to fe000000
+nid005079:68532:69108 [0] NCCL INFO comm 0x4a79eb80 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005079:68532:69108 [0] NCCL INFO Channel 00/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 01/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 02/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 03/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 04/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 05/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 06/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 07/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 08/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 09/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 10/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 11/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 12/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 13/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 14/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 15/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 16/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 17/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 18/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 19/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 20/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 21/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 22/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 23/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 24/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 25/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 26/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 27/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 28/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 29/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 30/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Channel 31/32 :    0
+nid005079:68532:69108 [0] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x4a79eb80 nRanks 01 busId ce000
+nid005079:68532:69108 [0] NCCL INFO P2P Chunksize set to 131072
+nid005079:68532:69108 [0] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005079:68532:69108 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005079:68532:69108 [0] NCCL INFO TUNER/Plugin: /lib/x86_64-linux-gnu/libfabric.so.1: version `FABRIC_1.8' not found (required by /lib/librccl-net.so)
+nid005079:68532:69108 [0] NCCL INFO TUNER/Plugin: Could not find: librccl-tuner.so. Using internal tuner plugin.
+nid005079:68532:69108 [0] NCCL INFO ncclCommInitRank comm 0x4a79eb80 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 commId 0xeaca36bf7479acbd localSize 272 used 101269984 bytes on core 29 - Init COMPLETE
+nid005079:68532:69108 [0] NCCL INFO Init timings: rank 0 nranks 1 total 2.14 (kernels 1.93, bootstrap 0.11, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+No existing process group found, creating a new group named: ep_size_1
+nid005079:68532:68532 [0] NCCL INFO Comm config Blocking set to 1
+nid005079:68532:69162 [0] NCCL INFO Using network Socket
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 11
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 4
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 10
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 9
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69162 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+nid005079:68532:69162 [0] NCCL INFO [node_id = 7; gpu_id = 3099; unique_id = 12806842524387570764; location_id = 52736; bdf = 52736; domain = 0; partition = 0], 
+nid005079:68532:69162 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69162 [0] NCCL INFO bootstrapSplit: comm 0x4a85a3e0 parent 0x4a79eb80 rank 0 nranks 1 color 59908776 key 0 prev 0 next 0 - DONE
+nid005079:68532:69162 [0] NCCL INFO ncclCommSplit comm 0x4a85a3e0 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 parent 0x4a79eb80 color 59908776 key 0 commId 0x116b7ce777ba54f3 - Init START
+nid005079:68532:69162 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69162 [0] NCCL INFO Setting affinity for GPU 0 to fe000000
+nid005079:68532:69162 [0] NCCL INFO comm 0x4a85a3e0 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005079:68532:69162 [0] NCCL INFO Channel 00/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 01/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 02/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 03/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 04/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 05/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 06/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 07/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 08/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 09/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 10/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 11/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 12/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 13/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 14/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 15/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 16/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 17/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 18/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 19/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 20/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 21/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 22/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 23/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 24/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 25/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 26/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 27/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 28/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 29/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 30/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Channel 31/32 :    0
+nid005079:68532:69162 [0] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x4a85a3e0 nRanks 01 busId ce000
+nid005079:68532:69162 [0] NCCL INFO P2P Chunksize set to 131072
+nid005079:68532:69162 [0] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005079:68532:69162 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005079:68532:69162 [0] NCCL INFO ncclCommSplit comm 0x4a85a3e0 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 parent 0x4a79eb80 color 59908776 key 0 commId 0x116b7ce777ba54f3 localSize 272 used 202539968 bytes on core 30 - Init COMPLETE
+nid005079:68532:69162 [0] NCCL INFO Init timings: rank 0 nranks 1 total 0.12 (kernels 0.00, bootstrap 0.01, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+nid005079:68532:68532 [0] NCCL INFO Comm config Blocking set to 1
+nid005079:68532:69168 [0] NCCL INFO Using network Socket
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 11
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 4
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 10
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 9
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69168 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+nid005079:68532:69168 [0] NCCL INFO [node_id = 7; gpu_id = 3099; unique_id = 12806842524387570764; location_id = 52736; bdf = 52736; domain = 0; partition = 0], 
+nid005079:68532:69168 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69168 [0] NCCL INFO bootstrapSplit: comm 0x4a915c40 parent 0x4a79eb80 rank 0 nranks 1 color 59908776 key 0 prev 0 next 0 - DONE
+nid005079:68532:69168 [0] NCCL INFO ncclCommSplit comm 0x4a915c40 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 parent 0x4a79eb80 color 59908776 key 0 commId 0x116b7ce777ba54f3 - Init START
+nid005079:68532:69168 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69168 [0] NCCL INFO Setting affinity for GPU 0 to fe000000
+nid005079:68532:69168 [0] NCCL INFO comm 0x4a915c40 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005079:68532:69168 [0] NCCL INFO Channel 00/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 01/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 02/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 03/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 04/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 05/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 06/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 07/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 08/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 09/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 10/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 11/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 12/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 13/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 14/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 15/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 16/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 17/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 18/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 19/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 20/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 21/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 22/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 23/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 24/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 25/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 26/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 27/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 28/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 29/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 30/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Channel 31/32 :    0
+nid005079:68532:69168 [0] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x4a915c40 nRanks 01 busId ce000
+nid005079:68532:69168 [0] NCCL INFO P2P Chunksize set to 131072
+nid005079:68532:69168 [0] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005079:68532:69168 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005079:68532:69168 [0] NCCL INFO ncclCommSplit comm 0x4a915c40 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 parent 0x4a79eb80 color 59908776 key 0 commId 0x116b7ce777ba54f3 localSize 272 used 303809952 bytes on core 31 - Init COMPLETE
+nid005079:68532:69168 [0] NCCL INFO Init timings: rank 0 nranks 1 total 0.12 (kernels 0.00, bootstrap 0.01, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+nid005079:68532:68532 [0] NCCL INFO Comm config Blocking set to 1
+nid005079:68532:69174 [0] NCCL INFO Using network Socket
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 5
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 5
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 11
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 11
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 8
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 8
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 6
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 6
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 4
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 4
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 10
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 10
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:716 NCCL WARN Could not read node # 9
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+
+nid005079:68532:69174 [0] /longer_pathname_so_that_rpms_can_support_packaging_the_debug_info_for_all_os_profiles/src/out/rhel-8.8/8.8/build/rccl/hipify/src/misc/alt_rsmi.cc:675 NCCL WARN Could not read node # 9
+nid005079:68532:69174 [0] NCCL INFO [node_id = 7; gpu_id = 3099; unique_id = 12806842524387570764; location_id = 52736; bdf = 52736; domain = 0; partition = 0], 
+nid005079:68532:69174 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69174 [0] NCCL INFO bootstrapSplit: comm 0x4a9d14a0 parent 0x4a79eb80 rank 0 nranks 1 color 59908776 key 0 prev 0 next 0 - DONE
+nid005079:68532:69174 [0] NCCL INFO ncclCommSplit comm 0x4a9d14a0 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 parent 0x4a79eb80 color 59908776 key 0 commId 0x116b7ce777ba54f3 - Init START
+nid005079:68532:69174 [0] NCCL INFO initialized internal alternative rsmi functionality
+nid005079:68532:69174 [0] NCCL INFO Setting affinity for GPU 0 to fe000000
+nid005079:68532:69174 [0] NCCL INFO comm 0x4a9d14a0 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid005079:68532:69174 [0] NCCL INFO Channel 00/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 01/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 02/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 03/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 04/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 05/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 06/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 07/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 08/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 09/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 10/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 11/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 12/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 13/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 14/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 15/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 16/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 17/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 18/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 19/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 20/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 21/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 22/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 23/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 24/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 25/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 26/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 27/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 28/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 29/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 30/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Channel 31/32 :    0
+nid005079:68532:69174 [0] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1 comm 0x4a9d14a0 nRanks 01 busId ce000
+nid005079:68532:69174 [0] NCCL INFO P2P Chunksize set to 131072
+nid005079:68532:69174 [0] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid005079:68532:69174 [0] NCCL INFO CC Off, Multi-GPU CC Off, workFifoBytes 1048576
+nid005079:68532:69174 [0] NCCL INFO ncclCommSplit comm 0x4a9d14a0 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId ce000 parent 0x4a79eb80 color 59908776 key 0 commId 0x116b7ce777ba54f3 localSize 272 used 405079936 bytes on core 25 - Init COMPLETE
+nid005079:68532:69174 [0] NCCL INFO Init timings: rank 0 nranks 1 total 0.12 (kernels 0.00, bootstrap 0.01, allgathers 0.00, topo 0.10, graphs 0.00, connections 0.01, rest 0.00)
+Running with DeepSpeed MoE backend
+[Rank 0] time (ms) | fwd_microstep: 2097.70 | bwd_microstep: 848.43 | bwd_inner_microstep: 846.44 | bwd_allreduce_microstep: 1.86 | step_microstep: 55.34
+[Rank 0] time (ms) | fwd: 2097.67 | bwd: 848.45 | bwd_inner: 846.50 | bwd_allreduce: 1.86 | step: 55.32
+[Rank 0] time (ms) | fwd_microstep: 9.98 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 9.97 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.81 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 9.66 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.13
+[Rank 0] time (ms) | fwd: 9.65 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.13
+[Rank 0] time (ms) | fwd_microstep: 9.62 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 9.61 | bwd: 9.18 | bwd_inner: 8.37 | bwd_allreduce: 0.80 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 9.69 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 9.68 | bwd: 9.21 | bwd_inner: 8.38 | bwd_allreduce: 0.80 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 9.76 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 9.75 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 9.70 | bwd_microstep: 9.17 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 9.69 | bwd: 9.17 | bwd_inner: 8.37 | bwd_allreduce: 0.79 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 9.88 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 9.87 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 9.91 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 9.90 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 9.71 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.47
+[Rank 0] time (ms) | fwd: 9.70 | bwd: 9.20 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.47
+step=10 step_time=0.0383s tok/s=106919.46 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 9.75 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.19
+[Rank 0] time (ms) | fwd: 9.74 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.19
+[Rank 0] time (ms) | fwd_microstep: 9.88 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 9.87 | bwd: 9.20 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 9.81 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 9.80 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 9.90 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 9.89 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 10.07 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 10.06 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 9.92 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 9.91 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 9.95 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 9.95 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 9.92 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 9.90 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 10.00 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 10.00 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 9.99 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.48
+[Rank 0] time (ms) | fwd: 9.98 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.81 | step: 16.48
+step=20 step_time=0.0386s tok/s=106220.03 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 10.01 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 10.00 | bwd: 9.21 | bwd_inner: 8.38 | bwd_allreduce: 0.81 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 10.10 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 10.09 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 10.12 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 10.11 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 10.16 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 10.15 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 10.19 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.15
+[Rank 0] time (ms) | fwd: 10.18 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.15
+[Rank 0] time (ms) | fwd_microstep: 10.30 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.14
+[Rank 0] time (ms) | fwd: 10.29 | bwd: 9.20 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 10.36 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 10.35 | bwd: 9.18 | bwd_inner: 8.37 | bwd_allreduce: 0.80 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 10.31 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 10.29 | bwd: 9.24 | bwd_inner: 8.42 | bwd_allreduce: 0.81 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 10.37 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.13
+[Rank 0] time (ms) | fwd: 10.36 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.13
+[Rank 0] time (ms) | fwd_microstep: 10.39 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.47
+[Rank 0] time (ms) | fwd: 10.38 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.47
+step=30 step_time=0.0389s tok/s=105216.75 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 10.44 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 10.43 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 10.45 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 10.44 | bwd: 9.18 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 10.45 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 10.44 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 10.52 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 10.51 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 10.62 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 10.61 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 10.64 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 10.63 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 10.64 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 10.63 | bwd: 9.22 | bwd_inner: 8.39 | bwd_allreduce: 0.81 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 10.73 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 10.73 | bwd: 9.21 | bwd_inner: 8.38 | bwd_allreduce: 0.81 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 10.78 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 10.77 | bwd: 9.20 | bwd_inner: 8.38 | bwd_allreduce: 0.80 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 11.17 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.51
+[Rank 0] time (ms) | fwd: 11.16 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.51
+step=40 step_time=0.0398s tok/s=102901.61 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 10.86 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 10.85 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 10.92 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 10.91 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 10.95 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 10.93 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 11.06 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 11.05 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 11.00 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 11.00 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 11.14 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 11.13 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 11.14 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 11.13 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 11.10 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 11.09 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 11.27 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 11.26 | bwd: 9.24 | bwd_inner: 8.42 | bwd_allreduce: 0.80 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 11.26 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.46
+[Rank 0] time (ms) | fwd: 11.25 | bwd: 9.20 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.46
+step=50 step_time=0.0398s tok/s=102981.99 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 11.31 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 11.30 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 11.35 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 11.35 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 11.36 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 11.35 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 11.45 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 11.44 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 11.46 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 11.45 | bwd: 9.18 | bwd_inner: 8.37 | bwd_allreduce: 0.79 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 11.50 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 11.48 | bwd: 9.19 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 11.56 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 11.55 | bwd: 9.24 | bwd_inner: 8.42 | bwd_allreduce: 0.80 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 11.60 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 11.59 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 11.60 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 11.59 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 11.64 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.48
+[Rank 0] time (ms) | fwd: 11.63 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.48
+step=60 step_time=0.0402s tok/s=101898.72 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 11.79 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 11.78 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 11.77 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 11.76 | bwd: 9.21 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 11.80 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 11.79 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 11.84 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 11.82 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 11.81 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 11.81 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 11.92 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 11.91 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 11.93 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 11.92 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 12.09 | bwd_microstep: 9.25 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 12.08 | bwd: 9.25 | bwd_inner: 8.43 | bwd_allreduce: 0.80 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 12.12 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 12.11 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 12.06 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.34
+[Rank 0] time (ms) | fwd: 12.05 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.35
+step=70 step_time=0.0405s tok/s=101130.32 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 12.20 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 12.19 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 12.14 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 12.13 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 12.24 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 12.24 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.79 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 12.29 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.13
+[Rank 0] time (ms) | fwd: 12.28 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.80 | step: 16.13
+[Rank 0] time (ms) | fwd_microstep: 12.33 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 12.32 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.13
+[Rank 0] time (ms) | fwd_microstep: 12.39 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 12.38 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 12.41 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 12.39 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 15.92
+[Rank 0] time (ms) | fwd_microstep: 12.48 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.17
+[Rank 0] time (ms) | fwd: 12.47 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.17
+[Rank 0] time (ms) | fwd_microstep: 12.48 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.78 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 12.47 | bwd: 9.18 | bwd_inner: 8.38 | bwd_allreduce: 0.78 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 12.52 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.59
+[Rank 0] time (ms) | fwd: 12.51 | bwd: 9.23 | bwd_inner: 8.40 | bwd_allreduce: 0.81 | step: 16.59
+step=80 step_time=0.0412s tok/s=99370.57 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 12.61 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.81 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 12.60 | bwd: 9.22 | bwd_inner: 8.39 | bwd_allreduce: 0.81 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 12.58 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 12.57 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 12.75 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 12.73 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 12.69 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 12.68 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 12.75 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.78 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 12.74 | bwd: 9.21 | bwd_inner: 8.41 | bwd_allreduce: 0.78 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 12.82 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 12.81 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 12.85 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 12.84 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 12.90 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.81 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 12.89 | bwd: 9.24 | bwd_inner: 8.41 | bwd_allreduce: 0.81 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 12.89 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 12.88 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 15.96
+[Rank 0] time (ms) | fwd_microstep: 13.54 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.43
+[Rank 0] time (ms) | fwd: 13.54 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.43
+step=90 step_time=0.0420s tok/s=97444.09 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 12.99 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 12.99 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 13.05 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 13.04 | bwd: 9.20 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 13.15 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 13.14 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.80 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 13.11 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 13.11 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 13.15 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 13.14 | bwd: 9.19 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 13.27 | bwd_microstep: 9.25 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.15
+[Rank 0] time (ms) | fwd: 13.26 | bwd: 9.25 | bwd_inner: 8.44 | bwd_allreduce: 0.79 | step: 16.15
+[Rank 0] time (ms) | fwd_microstep: 13.37 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 13.36 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 13.34 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 13.33 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 13.36 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 13.35 | bwd: 9.24 | bwd_inner: 8.41 | bwd_allreduce: 0.81 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 13.47 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.43
+[Rank 0] time (ms) | fwd: 13.46 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.43
+step=100 step_time=0.0420s tok/s=97640.02 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 13.41 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 13.40 | bwd: 9.20 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 13.59 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 13.58 | bwd: 9.24 | bwd_inner: 8.42 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 13.54 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 13.53 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 13.57 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 13.56 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 13.63 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 13.62 | bwd: 9.19 | bwd_inner: 8.37 | bwd_allreduce: 0.80 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 13.70 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 13.69 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 13.79 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 13.78 | bwd: 9.19 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 13.68 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.96
+[Rank 0] time (ms) | fwd: 13.67 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 13.87 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 13.86 | bwd: 9.18 | bwd_inner: 8.37 | bwd_allreduce: 0.79 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 13.81 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.53
+[Rank 0] time (ms) | fwd: 13.80 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.53
+step=110 step_time=0.0424s tok/s=96585.42 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 13.90 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 13.89 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 13.88 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 13.87 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 13.96 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 13.95 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 14.06 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 14.06 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.08
+[Rank 0] time (ms) | fwd_microstep: 14.16 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.13
+[Rank 0] time (ms) | fwd: 14.15 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.13
+[Rank 0] time (ms) | fwd_microstep: 14.11 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.78 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 14.10 | bwd: 9.18 | bwd_inner: 8.38 | bwd_allreduce: 0.78 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 14.06 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.81 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 14.05 | bwd: 9.21 | bwd_inner: 8.38 | bwd_allreduce: 0.81 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 14.17 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 14.16 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 14.28 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 14.27 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 14.30 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.55
+[Rank 0] time (ms) | fwd: 14.29 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.55
+step=120 step_time=0.0430s tok/s=95327.80 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 14.27 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 14.26 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 14.31 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.15
+[Rank 0] time (ms) | fwd: 14.30 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.15
+[Rank 0] time (ms) | fwd_microstep: 14.47 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 14.46 | bwd: 9.23 | bwd_inner: 8.40 | bwd_allreduce: 0.81 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 14.44 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 14.43 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 14.48 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 14.47 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 14.45 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.97
+[Rank 0] time (ms) | fwd: 14.45 | bwd: 9.24 | bwd_inner: 8.43 | bwd_allreduce: 0.79 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 14.55 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.93
+[Rank 0] time (ms) | fwd: 14.53 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 15.95
+[Rank 0] time (ms) | fwd_microstep: 14.63 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 14.62 | bwd: 9.20 | bwd_inner: 8.38 | bwd_allreduce: 0.80 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 14.70 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 14.69 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 14.72 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.39
+[Rank 0] time (ms) | fwd: 14.71 | bwd: 9.19 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.39
+step=130 step_time=0.0432s tok/s=94889.18 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 14.75 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 14.74 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 14.80 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.15
+[Rank 0] time (ms) | fwd: 14.79 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.16
+[Rank 0] time (ms) | fwd_microstep: 14.88 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 14.87 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 14.86 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 14.85 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 14.90 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 14.89 | bwd: 9.22 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 14.96 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.15
+[Rank 0] time (ms) | fwd: 14.95 | bwd: 9.21 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.16
+[Rank 0] time (ms) | fwd_microstep: 15.00 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.78 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 14.99 | bwd: 9.21 | bwd_inner: 8.41 | bwd_allreduce: 0.78 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 15.00 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.92
+[Rank 0] time (ms) | fwd: 14.99 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 15.93
+[Rank 0] time (ms) | fwd_microstep: 15.06 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.43 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.15
+[Rank 0] time (ms) | fwd: 15.05 | bwd: 9.24 | bwd_inner: 8.43 | bwd_allreduce: 0.79 | step: 16.16
+[Rank 0] time (ms) | fwd_microstep: 15.51 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.46
+[Rank 0] time (ms) | fwd: 15.50 | bwd: 9.18 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.46
+step=140 step_time=0.0440s tok/s=93027.54 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 15.15 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.07
+[Rank 0] time (ms) | fwd: 15.15 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.80 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 15.15 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 15.15 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 15.24 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 15.23 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 15.27 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.13
+[Rank 0] time (ms) | fwd: 15.26 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.14
+[Rank 0] time (ms) | fwd_microstep: 15.35 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 15.34 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 15.36 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 15.35 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 15.43 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.14
+[Rank 0] time (ms) | fwd: 15.42 | bwd: 9.20 | bwd_inner: 8.38 | bwd_allreduce: 0.80 | step: 16.16
+[Rank 0] time (ms) | fwd_microstep: 15.45 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.14
+[Rank 0] time (ms) | fwd: 15.44 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.15
+[Rank 0] time (ms) | fwd_microstep: 15.51 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 15.50 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 15.56 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.48
+[Rank 0] time (ms) | fwd: 15.56 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.79 | step: 16.49
+step=150 step_time=0.0441s tok/s=92803.40 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 15.56 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 15.55 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 15.63 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 15.63 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.80 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 15.72 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 15.71 | bwd: 9.19 | bwd_inner: 8.37 | bwd_allreduce: 0.80 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 15.74 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.95
+[Rank 0] time (ms) | fwd: 15.73 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 15.97
+[Rank 0] time (ms) | fwd_microstep: 15.84 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 15.83 | bwd: 9.22 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 15.86 | bwd_microstep: 9.25 | bwd_inner_microstep: 8.44 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 15.85 | bwd: 9.25 | bwd_inner: 8.44 | bwd_allreduce: 0.79 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 15.85 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.08
+[Rank 0] time (ms) | fwd: 15.84 | bwd: 9.24 | bwd_inner: 8.42 | bwd_allreduce: 0.80 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 15.91 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.16
+[Rank 0] time (ms) | fwd: 15.90 | bwd: 9.19 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.18
+[Rank 0] time (ms) | fwd_microstep: 16.00 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 15.99 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 16.08 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.49
+[Rank 0] time (ms) | fwd: 16.07 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.49
+step=160 step_time=0.0446s tok/s=91755.24 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 16.09 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 16.07 | bwd: 9.20 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 16.19 | bwd_microstep: 9.24 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 16.18 | bwd: 9.24 | bwd_inner: 8.42 | bwd_allreduce: 0.80 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 16.23 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 16.22 | bwd: 9.18 | bwd_inner: 8.37 | bwd_allreduce: 0.79 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 16.37 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 16.36 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 16.42 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 16.41 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 16.65 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 16.64 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 16.54 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.01
+[Rank 0] time (ms) | fwd: 16.53 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 16.53 | bwd_microstep: 9.25 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 16.52 | bwd: 9.25 | bwd_inner: 8.43 | bwd_allreduce: 0.80 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 16.53 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.02
+[Rank 0] time (ms) | fwd: 16.52 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.02
+[Rank 0] time (ms) | fwd_microstep: 16.66 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.40
+[Rank 0] time (ms) | fwd: 16.65 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.40
+step=170 step_time=0.0451s tok/s=90747.62 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 16.64 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.18
+[Rank 0] time (ms) | fwd: 16.63 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.19
+[Rank 0] time (ms) | fwd_microstep: 16.74 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 16.73 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 16.81 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 16.80 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 17.27 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.04
+[Rank 0] time (ms) | fwd: 17.26 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 16.91 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.14
+[Rank 0] time (ms) | fwd: 16.90 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.14
+[Rank 0] time (ms) | fwd_microstep: 17.04 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 17.02 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 17.04 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 17.03 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 17.01 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 17.00 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.09
+[Rank 0] time (ms) | fwd_microstep: 17.17 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 15.98
+[Rank 0] time (ms) | fwd: 17.16 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 15.98
+[Rank 0] time (ms) | fwd_microstep: 17.17 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.52
+[Rank 0] time (ms) | fwd: 17.16 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.79 | step: 16.52
+step=180 step_time=0.0458s tok/s=89430.75 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 17.19 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 17.18 | bwd: 9.21 | bwd_inner: 8.40 | bwd_allreduce: 0.79 | step: 16.13
+[Rank 0] time (ms) | fwd_microstep: 17.29 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.09
+[Rank 0] time (ms) | fwd: 17.28 | bwd: 9.18 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.10
+[Rank 0] time (ms) | fwd_microstep: 17.35 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 17.34 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 17.40 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 17.39 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.79 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 17.48 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 17.47 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 17.51 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 17.50 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.79 | step: 16.00
+[Rank 0] time (ms) | fwd_microstep: 17.53 | bwd_microstep: 9.19 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 17.52 | bwd: 9.19 | bwd_inner: 8.38 | bwd_allreduce: 0.79 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 17.62 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.14
+[Rank 0] time (ms) | fwd: 17.61 | bwd: 9.21 | bwd_inner: 8.38 | bwd_allreduce: 0.81 | step: 16.16
+[Rank 0] time (ms) | fwd_microstep: 17.69 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.10
+[Rank 0] time (ms) | fwd: 17.68 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.80 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 18.31 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.46
+[Rank 0] time (ms) | fwd: 18.30 | bwd: 9.21 | bwd_inner: 8.39 | bwd_allreduce: 0.81 | step: 16.46
+step=190 step_time=0.0468s tok/s=87500.17 mem_alloc=2466733056
+[Rank 0] time (ms) | fwd_microstep: 17.76 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 15.99
+[Rank 0] time (ms) | fwd: 17.75 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 15.99
+[Rank 0] time (ms) | fwd_microstep: 17.81 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.78 | step_microstep: 16.00
+[Rank 0] time (ms) | fwd: 17.80 | bwd: 9.20 | bwd_inner: 8.40 | bwd_allreduce: 0.78 | step: 16.01
+[Rank 0] time (ms) | fwd_microstep: 17.86 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.42 | bwd_allreduce_microstep: 0.78 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 17.86 | bwd: 9.23 | bwd_inner: 8.42 | bwd_allreduce: 0.78 | step: 16.04
+[Rank 0] time (ms) | fwd_microstep: 17.95 | bwd_microstep: 9.18 | bwd_inner_microstep: 8.37 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 17.94 | bwd: 9.18 | bwd_inner: 8.37 | bwd_allreduce: 0.79 | step: 16.05
+[Rank 0] time (ms) | fwd_microstep: 18.01 | bwd_microstep: 9.23 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.05
+[Rank 0] time (ms) | fwd: 18.00 | bwd: 9.23 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.07
+[Rank 0] time (ms) | fwd_microstep: 18.11 | bwd_microstep: 9.22 | bwd_inner_microstep: 8.41 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.12
+[Rank 0] time (ms) | fwd: 18.10 | bwd: 9.22 | bwd_inner: 8.41 | bwd_allreduce: 0.80 | step: 16.12
+[Rank 0] time (ms) | fwd_microstep: 18.10 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.80 | step_microstep: 16.03
+[Rank 0] time (ms) | fwd: 18.09 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.80 | step: 16.03
+[Rank 0] time (ms) | fwd_microstep: 18.23 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.40 | bwd_allreduce_microstep: 0.78 | step_microstep: 16.11
+[Rank 0] time (ms) | fwd: 18.22 | bwd: 9.20 | bwd_inner: 8.40 | bwd_allreduce: 0.78 | step: 16.11
+[Rank 0] time (ms) | fwd_microstep: 18.31 | bwd_microstep: 9.20 | bwd_inner_microstep: 8.39 | bwd_allreduce_microstep: 0.79 | step_microstep: 16.06
+[Rank 0] time (ms) | fwd: 18.30 | bwd: 9.20 | bwd_inner: 8.39 | bwd_allreduce: 0.79 | step: 16.06
+[Rank 0] time (ms) | fwd_microstep: 18.33 | bwd_microstep: 9.21 | bwd_inner_microstep: 8.38 | bwd_allreduce_microstep: 0.81 | step_microstep: 16.62
+[Rank 0] time (ms) | fwd: 18.32 | bwd: 9.21 | bwd_inner: 8.38 | bwd_allreduce: 0.81 | step: 16.61
+step=200 step_time=0.0470s tok/s=87160.56 mem_alloc=2466733056
+Saved run summary to results/phase1_1gpu_summary.json
+nid005079:68532:68532 [0] NCCL INFO comm 0x4a9d14a0 rank 0 nranks 1 cudaDev 0 busId ce000 - Destroy COMPLETE
+nid005079:68532:68532 [0] NCCL INFO comm 0x4a915c40 rank 0 nranks 1 cudaDev 0 busId ce000 - Destroy COMPLETE
+nid005079:68532:68532 [0] NCCL INFO comm 0x4a85a3e0 rank 0 nranks 1 cudaDev 0 busId ce000 - Destroy COMPLETE
+nid005079:68532:68532 [0] NCCL INFO comm 0x4a79eb80 rank 0 nranks 1 cudaDev 0 busId ce000 - Destroy COMPLETE
