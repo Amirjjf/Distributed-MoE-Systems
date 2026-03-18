@@ -164,6 +164,89 @@ class MetricLogger:
             "num_logged_points": len(rows),
         }
 
+        planner_rows = [r for r in rows if "rebalance_enabled" in r]
+        if planner_rows:
+            eval_rows = [r for r in planner_rows if bool(r.get("rebalance_evaluated_this_step", False))]
+            trigger_rows = [r for r in eval_rows if bool(r.get("rebalance_triggered", False))]
+            applied_rows = [r for r in eval_rows if bool(r.get("rebalance_applied", False))]
+            dry_run_only_rows = [
+                r
+                for r in trigger_rows
+                if not bool(r.get("rebalance_applied", False))
+                and "dry_run" in str(r.get("rebalance_apply_reason", ""))
+            ]
+            blocked_ds_rows = [
+                r
+                for r in trigger_rows
+                if not bool(r.get("rebalance_applied", False))
+                and "deepspeed" in str(r.get("rebalance_apply_reason", "")).lower()
+            ]
+
+            cur_vals = [
+                float(r["rebalance_metric_current"]) for r in trigger_rows if r.get("rebalance_metric_current") is not None
+            ]
+            prop_vals = [
+                float(r["rebalance_metric_proposed"]) for r in trigger_rows if r.get("rebalance_metric_proposed") is not None
+            ]
+            improv_vals = [
+                float(r["rebalance_expected_improvement"])
+                for r in trigger_rows
+                if r.get("rebalance_expected_improvement") is not None
+            ]
+            remote_vals = [float(r["remote_fraction"]) for r in planner_rows if r.get("remote_fraction") is not None]
+            comm_cur = [float(r["communication_proxy_current"]) for r in trigger_rows if r.get("communication_proxy_current") is not None]
+            comm_prop = [
+                float(r["communication_proxy_proposed"]) for r in trigger_rows if r.get("communication_proxy_proposed") is not None
+            ]
+            total_moved = int(sum(int(r.get("rebalance_num_experts_moved", 0)) for r in applied_rows))
+
+            num_eval = len(eval_rows)
+            num_trigger = len(trigger_rows)
+            summary["rebalance_planner"] = {
+                "enabled": bool(any(bool(r.get("rebalance_enabled", False)) for r in planner_rows)),
+                "num_evaluations": num_eval,
+                "num_triggers": num_trigger,
+                "trigger_rate": float(num_trigger / num_eval) if num_eval > 0 else 0.0,
+                "triggered_metric_current_avg": float(statistics.mean(cur_vals)) if cur_vals else None,
+                "triggered_metric_proposed_avg": float(statistics.mean(prop_vals)) if prop_vals else None,
+                "triggered_expected_improvement_avg": float(statistics.mean(improv_vals)) if improv_vals else None,
+                "num_applied_rebalances": len(applied_rows),
+                "total_experts_moved": total_moved,
+                "num_triggers_dry_run_only": len(dry_run_only_rows),
+                "num_triggers_blocked_deepspeed": len(blocked_ds_rows),
+                "avg_communication_proxy_current": float(statistics.mean(comm_cur)) if comm_cur else None,
+                "avg_communication_proxy_proposed": float(statistics.mean(comm_prop)) if comm_prop else None,
+                "avg_remote_fraction": float(statistics.mean(remote_vals)) if remote_vals else None,
+            }
+
+            remote_before: List[float] = []
+            remote_after: List[float] = []
+            for event_row in applied_rows:
+                before_v = event_row.get("remote_fraction")
+                if before_v is not None:
+                    remote_before.append(float(before_v))
+
+                event_step = int(event_row.get("step", -1))
+                after_v: Optional[float] = None
+                for later_row in planner_rows:
+                    if int(later_row.get("step", -1)) <= event_step:
+                        continue
+                    if later_row.get("remote_fraction") is None:
+                        continue
+                    after_v = float(later_row["remote_fraction"])
+                    break
+                if after_v is not None:
+                    remote_after.append(after_v)
+
+            summary["rebalance_runtime"] = {
+                "applied_rebalances": len(applied_rows),
+                "total_experts_moved": total_moved,
+                "avg_remote_fraction": float(statistics.mean(remote_vals)) if remote_vals else None,
+                "remote_fraction_before_apply_avg": float(statistics.mean(remote_before)) if remote_before else None,
+                "remote_fraction_after_apply_avg": float(statistics.mean(remote_after)) if remote_after else None,
+                "dry_run_only_triggers": len(dry_run_only_rows),
+                "blocked_deepspeed_triggers": len(blocked_ds_rows),
+            }
+
         with open(summary_path, "w", encoding="utf-8") as f:
             json.dump(summary, f, indent=2, sort_keys=True)
-

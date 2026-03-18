@@ -14,6 +14,18 @@
   "grad_clip": 1.0,
   "precision": "bf16",
   "use_deepspeed_moe": true,
-  "moe_aux_loss_coef": 0.01
+  "moe_aux_loss_coef": 0.01,
+  "enable_rebalance_planner": false,
+  "rebalance_eval_interval": 10,
+  "rebalance_history_size": 5,
+  "rebalance_threshold": 0.05,
+  "rebalance_metric": "wasted_fraction",
+  "rebalance_min_steps": 20,
+  "rebalance_cooldown": 100,
+  "rebalance_use_ema": true,
+  "rebalance_ema_beta": 0.8,
+  "rebalance_dry_run": true,
+  "rebalance_apply_live_fallback": true,
+  "rebalance_log_remote_stats": true,
+  "rebalance_min_expected_improvement": 0.0
 }
-
