@@ -299,7 +299,7 @@ Simulated (honestly):
 - remote expert execution is simulated (dispatch accounted, no local expert backprop for remote-owned experts)
 - this is not full DeepSpeed expert migration across ranks
 
-DeepSpeed status:
+DeepSpeed status in Step 2 (historical):
 - planner still runs
 - live apply is intentionally blocked
 - logs use reason: `triggered_but_live_apply_not_supported_for_deepspeed_yet`
@@ -373,8 +373,200 @@ Runtime remote/local behavior:
 - `communication_proxy_proposed`
 - `communication_proxy_improvement`
 
-### Current limitations (important)
+### Current limitations (important, Step 2)
 
 - Live apply works only for fallback backend in this step.
-- DeepSpeed backend stays planner-only for now.
 - Fallback distributed dispatch is a practical simulation, not full expert migration.
+
+## Phase 2 Step 3 (DeepSpeed Mapping-Aware EP, Startup + Restart Apply)
+
+Step 3 makes DeepSpeed expert parallelism real in this codebase and adds mapping-aware planner integration for DeepSpeed.
+
+### What Step 3 adds
+
+- DeepSpeed MoE no longer hardcodes `ep_size=1`
+- `deepspeed_ep_size` is used (default auto = `world_size`)
+- when `deepspeed_enable_mapped_experts=true`, Step 3 enforces `ep_size == world_size`
+- startup now has an active DeepSpeed map state (`expert_to_gpu_map_active`)
+- optional startup map load from `deepspeed_initial_map_path`
+- planner triggers can save a pending DeepSpeed map artifact for next run
+
+### How DeepSpeed mapping works now
+
+What is real:
+- DeepSpeed runs with real expert parallel grouping (`ep_size > 1` on multi-GPU runs)
+- active map state is initialized at startup and logged
+- each rank logs `local_expert_ids_active` and `num_local_experts_active`
+- rebalance triggers can produce a `*_deepspeed_next_map_step*.json` map artifact
+
+What is limited (honest):
+- no in-job DeepSpeed remap/rebuild in Step 3
+- apply mode is `save_next_requires_restart`
+- planner proposals are auto-projected to EP-compatible maps (equal experts per rank)
+- applying a new DeepSpeed map requires restarting with `deepspeed_initial_map_path`
+
+### New DeepSpeed mapping config keys
+
+- `deepspeed_ep_size`
+- `deepspeed_enable_mapped_experts`
+- `deepspeed_allow_rebuild_on_rebalance` (parsed/logged, not used for live rebuild in Step 3)
+- `deepspeed_rebalance_mode` (Step 3 uses `save_next_requires_restart`)
+- `deepspeed_initial_map_path`
+
+### Step 3 configs and script
+
+- `configs/heavy_phase2_step3_deepspeed_mapping.json`
+- `scripts/run_phase2_step3_deepspeed_mapping_8gpu.sbatch`
+
+The script supports overrides:
+- `CONFIG` (default: `configs/heavy_phase2_step3_deepspeed_mapping.json`)
+- `RUN_NAME` (default: `phase2_step3_ds_map_8gpu`)
+- `DS_CONFIG` (default: `configs/ds_config_moe.json`)
+
+### Run Step 3 on LUMI (8 GPU DeepSpeed mapping run)
+
+Submit:
+```bash
+sbatch scripts/run_phase2_step3_deepspeed_mapping_8gpu.sbatch
+```
+
+Monitor:
+```bash
+tail -n 200 logs/phase2_step3_ds_map_8gpu_<JOBID>.out
+tail -n 200 logs/phase2_step3_ds_map_8gpu_<JOBID>.err
+```
+
+Confirm DeepSpeed EP group is not `ep_size_1`:
+```bash
+grep -n "ep_size_" logs/phase2_step3_ds_map_8gpu_<JOBID>.out | head
+```
+
+### Step 3 JSONL fields to inspect
+
+- `deepspeed_ep_size`
+- `deepspeed_mapping_enabled`
+- `deepspeed_mapping_apply_mode`
+- `deepspeed_map_rebuild_count`
+- `deepspeed_pending_map_path`
+- `deepspeed_startup_map_apply_reason`
+- `expert_to_gpu_map_active`
+- `local_expert_ids_active`
+- `num_local_experts_active`
+- `rebalance_apply_reason`
+- `proposed_expert_to_gpu_map_ep_compatible`
+
+Expected rebalance apply reason on DeepSpeed trigger:
+- `saved_next_deepspeed_map_requires_restart`
+
+### Apply pending DeepSpeed map via restart
+
+1. Run Step 3 once and locate pending path from JSONL (`deepspeed_pending_map_path`).
+2. Create a restart config:
+```bash
+cp configs/heavy_phase2_step3_deepspeed_mapping.json configs/heavy_phase2_step3_deepspeed_mapping_restart.json
+```
+3. Set `deepspeed_initial_map_path` in the restart config:
+```bash
+python - <<'PY'
+import json
+cfg_path = "configs/heavy_phase2_step3_deepspeed_mapping_restart.json"
+pending_map = "results/phase2_step3_ds_map_8gpu_deepspeed_next_map_stepXXXX.json"  # replace XXXX
+with open(cfg_path, "r", encoding="utf-8") as f:
+    cfg = json.load(f)
+cfg["deepspeed_initial_map_path"] = pending_map
+with open(cfg_path, "w", encoding="utf-8") as f:
+    json.dump(cfg, f, indent=2)
+print("updated", cfg_path)
+PY
+```
+4. Submit restart run with overrides:
+```bash
+CONFIG=configs/heavy_phase2_step3_deepspeed_mapping_restart.json RUN_NAME=phase2_step3_ds_map_8gpu_restart sbatch scripts/run_phase2_step3_deepspeed_mapping_8gpu.sbatch
+```
+5. Confirm startup logs include:
+- `deepspeed_startup_map_apply_reason = applied_initial_deepspeed_mapping`
+- `deepspeed_initial_map_path` set to your pending map file
+
+## Phase 2 Step 4 (DeepSpeed Startup Mapping Actually Affects Ownership)
+
+Step 4 fixes the main Step 3 gap: in Step 3, DeepSpeed map state existed, but DeepSpeed expert ownership was still mostly default/internal.
+
+### What was missing in Step 3
+
+- startup map could be loaded and logged
+- planner could save next-map artifacts
+- but DeepSpeed expert construction still did not truly use the chosen global map for local ownership
+
+### What is real in Step 4
+
+- startup active map is converted to a deterministic DeepSpeed internal layout
+- each rank builds local expert modules from its mapped global expert ids
+- DeepSpeed gate internal ordering is aligned with startup map layout
+- DeepSpeed `exp_counts` are converted back to global expert-id order before logging/planner
+- startup logs are printed on every rank with local ids/count and global->local index map
+
+### Still limited (honest)
+
+- no live in-job DeepSpeed remap/rebuild
+- planner mode for DeepSpeed is still restart-based: `save_next_requires_restart`
+- when startup map is invalid for EP balance, it is auto-projected and this is logged
+
+### Step 4 files
+
+- `configs/heavy_phase2_step4_deepspeed_mapping_startup_real.json`
+- `scripts/run_phase2_step4_deepspeed_mapping_8gpu.sbatch`
+
+Script overrides:
+- `CONFIG` (default: `configs/heavy_phase2_step4_deepspeed_mapping_startup_real.json`)
+- `RUN_NAME` (default: `phase2_step4_ds_map_8gpu`)
+- `DS_CONFIG` (default: `configs/ds_config_moe.json`)
+- `INITIAL_MAP_PATH` (optional, for restart apply)
+
+### Run Step 4 on LUMI
+
+1. Initial mapped run:
+```bash
+sbatch scripts/run_phase2_step4_deepspeed_mapping_8gpu.sbatch
+```
+
+2. Monitor:
+```bash
+tail -n 200 logs/phase2_step4_ds_map_8gpu_<JOBID>.out
+tail -n 200 logs/phase2_step4_ds_map_8gpu_<JOBID>.err
+```
+
+3. Confirm startup ownership logs are present for each rank:
+```bash
+grep -n "local_expert_ids_active_startup" logs/phase2_step4_ds_map_8gpu_<JOBID>.out
+```
+
+### Restart with saved next-map artifact
+
+1. Find pending map path from JSONL field `deepspeed_pending_map_path`.
+2. Submit restart run by passing map path directly:
+```bash
+INITIAL_MAP_PATH=results/phase2_step4_ds_map_8gpu_deepspeed_next_map_stepXXXX.json \
+RUN_NAME=phase2_step4_ds_map_restart \
+sbatch scripts/run_phase2_step4_deepspeed_mapping_8gpu.sbatch
+```
+
+```bash
+sbatch --export=ALL,INITIAL_MAP_PATH=results/phase2_step3_ds_map_8gpu_8gpu_deepspeed_next_map_step1100.json,RUN_NAME=phase2_step4_ds_map_restart scripts/run_phase2_step4_deepspeed_mapping_8gpu.sbatch
+```
+
+3. Verify startup apply in logs:
+- `deepspeed_startup_map_apply_reason` is `applied_initial_deepspeed_mapping` or `applied_initial_deepspeed_mapping_after_projection`
+- `deepspeed_initial_map_path` equals your pending map file
+
+### Step 4 JSONL fields to inspect
+
+- `expert_to_gpu_map_active`
+- `local_expert_ids_active`
+- `num_local_experts_active`
+- `rank_local_expert_count`
+- `global_to_local_expert_index`
+- `deepspeed_mapping_enabled`
+- `deepspeed_mapping_apply_mode`
+- `deepspeed_startup_map_apply_reason`
+- `deepspeed_initial_map_path`
+- `deepspeed_pending_map_path`

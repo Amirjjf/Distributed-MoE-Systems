@@ -179,7 +179,16 @@ class MetricLogger:
                 r
                 for r in trigger_rows
                 if not bool(r.get("rebalance_applied", False))
-                and "deepspeed" in str(r.get("rebalance_apply_reason", "")).lower()
+                and str(r.get("rebalance_apply_reason", "")) in {
+                    "triggered_but_live_apply_not_supported_for_deepspeed_yet",
+                    "triggered_but_deepspeed_mapping_disabled",
+                    "triggered_but_unsupported_deepspeed_mode",
+                }
+            ]
+            pending_ds_rows = [
+                r
+                for r in trigger_rows
+                if str(r.get("rebalance_apply_reason", "")) == "saved_next_deepspeed_map_requires_restart"
             ]
 
             cur_vals = [
@@ -214,6 +223,7 @@ class MetricLogger:
                 "total_experts_moved": total_moved,
                 "num_triggers_dry_run_only": len(dry_run_only_rows),
                 "num_triggers_blocked_deepspeed": len(blocked_ds_rows),
+                "num_triggers_saved_next_deepspeed_map": len(pending_ds_rows),
                 "avg_communication_proxy_current": float(statistics.mean(comm_cur)) if comm_cur else None,
                 "avg_communication_proxy_proposed": float(statistics.mean(comm_prop)) if comm_prop else None,
                 "avg_remote_fraction": float(statistics.mean(remote_vals)) if remote_vals else None,
@@ -246,7 +256,74 @@ class MetricLogger:
                 "remote_fraction_after_apply_avg": float(statistics.mean(remote_after)) if remote_after else None,
                 "dry_run_only_triggers": len(dry_run_only_rows),
                 "blocked_deepspeed_triggers": len(blocked_ds_rows),
+                "saved_next_deepspeed_map_triggers": len(pending_ds_rows),
             }
+
+            deepspeed_rows = [
+                r
+                for r in rows
+                if r.get("moe_backend") == "deepspeed" or r.get("deepspeed_ep_size") is not None
+            ]
+            if deepspeed_rows:
+                ep_sizes_seen = sorted(
+                    {
+                        int(r.get("deepspeed_ep_size"))
+                        for r in deepspeed_rows
+                        if r.get("deepspeed_ep_size") is not None
+                    }
+                )
+                mapping_enabled_vals = [
+                    1.0 if bool(r.get("deepspeed_mapping_enabled", False)) else 0.0 for r in deepspeed_rows
+                ]
+                pending_paths = sorted(
+                    {
+                        str(r.get("deepspeed_pending_map_path"))
+                        for r in deepspeed_rows
+                        if r.get("deepspeed_pending_map_path")
+                    }
+                )
+                rebuild_counts = [int(r.get("deepspeed_map_rebuild_count", 0)) for r in deepspeed_rows]
+                apply_modes = sorted(
+                    {
+                        str(r.get("deepspeed_mapping_apply_mode"))
+                        for r in deepspeed_rows
+                        if r.get("deepspeed_mapping_apply_mode") is not None
+                    }
+                )
+                startup_reasons = sorted(
+                    {
+                        str(r.get("deepspeed_startup_map_apply_reason"))
+                        for r in deepspeed_rows
+                        if r.get("deepspeed_startup_map_apply_reason") is not None
+                    }
+                )
+                rank_local_counts_seen = sorted(
+                    {
+                        int(r.get("rank_local_expert_count"))
+                        for r in deepspeed_rows
+                        if r.get("rank_local_expert_count") is not None
+                    }
+                )
+                num_rows_with_global_to_local = len(
+                    [r for r in deepspeed_rows if r.get("global_to_local_expert_index") is not None]
+                )
+                startup_projected_seen = bool(
+                    any(bool(r.get("deepspeed_startup_map_projected", False)) for r in deepspeed_rows)
+                )
+
+                summary["deepspeed_mapping"] = {
+                    "ep_sizes_seen": ep_sizes_seen,
+                    "mapping_enabled_rate": float(statistics.mean(mapping_enabled_vals)) if mapping_enabled_vals else 0.0,
+                    "num_saved_next_map_events": len(pending_ds_rows),
+                    "num_pending_map_paths_seen": len(pending_paths),
+                    "pending_map_paths_seen": pending_paths,
+                    "map_rebuild_count_total": max(rebuild_counts) if rebuild_counts else 0,
+                    "mapping_apply_modes_seen": apply_modes,
+                    "startup_apply_reasons_seen": startup_reasons,
+                    "rank_local_expert_counts_seen": rank_local_counts_seen,
+                    "rows_with_global_to_local_index": num_rows_with_global_to_local,
+                    "startup_map_projection_seen": startup_projected_seen,
+                }
 
         with open(summary_path, "w", encoding="utf-8") as f:
             json.dump(summary, f, indent=2, sort_keys=True)

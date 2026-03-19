@@ -1,12 +1,32 @@
+import json
 import statistics
 from collections import deque
-from typing import Any, Deque, Dict, List, Optional, Tuple
+from pathlib import Path
+from typing import Any, Callable, Deque, Dict, List, Optional, Tuple, TypeVar
+
+T = TypeVar("T")
 
 
 def build_initial_expert_map(num_experts: int, world_size: int) -> List[int]:
     if world_size <= 0:
         return [0 for _ in range(max(num_experts, 0))]
     return [expert_id % world_size for expert_id in range(max(num_experts, 0))]
+
+
+def build_deepspeed_ep_map(num_experts: int, ep_size: int) -> List[int]:
+    n = max(int(num_experts), 0)
+    if ep_size <= 0:
+        return [0 for _ in range(n)]
+    if n == 0:
+        return []
+    if n % ep_size != 0:
+        return build_initial_expert_map(n, ep_size)
+
+    per_rank = n // ep_size
+    mapping = [0 for _ in range(n)]
+    for expert_id in range(n):
+        mapping[expert_id] = min(expert_id // per_rank, ep_size - 1)
+    return mapping
 
 
 def count_mapping_changes(old_map: List[int], new_map: List[int]) -> int:
@@ -18,6 +38,156 @@ def count_mapping_changes(old_map: List[int], new_map: List[int]) -> int:
 
 def get_local_experts_for_rank(expert_to_gpu: List[int], rank: int) -> List[int]:
     return [expert_id for expert_id, gpu_id in enumerate(expert_to_gpu) if int(gpu_id) == int(rank)]
+
+
+def build_global_to_local_expert_index(local_expert_ids: List[int]) -> Dict[int, int]:
+    out: Dict[int, int] = {}
+    for local_idx, global_expert_id in enumerate(local_expert_ids):
+        out[int(global_expert_id)] = int(local_idx)
+    return out
+
+
+def build_rank_local_expert_modules(
+    hidden_size: int,
+    local_expert_ids: List[int],
+    expert_builder: Callable[[int, int], T],
+) -> List[T]:
+    modules: List[T] = []
+    for global_expert_id in local_expert_ids:
+        modules.append(expert_builder(int(hidden_size), int(global_expert_id)))
+    return modules
+
+
+def build_deepspeed_startup_layout(expert_to_gpu_map: List[int], ep_size: int) -> Dict[str, List[Any]]:
+    n = len(expert_to_gpu_map)
+    e = int(ep_size)
+    if e <= 0:
+        e = 1
+
+    rank_to_global_expert_ids: List[List[int]] = [[] for _ in range(e)]
+    for global_expert_id, gpu_id in enumerate(expert_to_gpu_map):
+        r = int(gpu_id)
+        if r < 0 or r >= e:
+            r = 0
+        rank_to_global_expert_ids[r].append(int(global_expert_id))
+
+    internal_to_global_expert_ids: List[int] = []
+    for r in range(e):
+        internal_to_global_expert_ids.extend(rank_to_global_expert_ids[r])
+
+    if len(internal_to_global_expert_ids) != n:
+        seen = {int(x) for x in internal_to_global_expert_ids}
+        for global_expert_id in range(n):
+            if global_expert_id not in seen:
+                internal_to_global_expert_ids.append(int(global_expert_id))
+        internal_to_global_expert_ids = internal_to_global_expert_ids[:n]
+
+    global_to_internal_expert_ids = [-1 for _ in range(n)]
+    for internal_expert_id, global_expert_id in enumerate(internal_to_global_expert_ids):
+        g = int(global_expert_id)
+        if 0 <= g < n:
+            global_to_internal_expert_ids[g] = int(internal_expert_id)
+    for global_expert_id in range(n):
+        if global_to_internal_expert_ids[global_expert_id] < 0:
+            global_to_internal_expert_ids[global_expert_id] = int(global_expert_id)
+
+    return {
+        "internal_to_global_expert_ids": [int(x) for x in internal_to_global_expert_ids],
+        "global_to_internal_expert_ids": [int(x) for x in global_to_internal_expert_ids],
+        "rank_to_global_expert_ids": [[int(x) for x in row] for row in rank_to_global_expert_ids],
+    }
+
+
+def load_expert_map_json(path: str, num_experts: int, default_map: Optional[List[int]] = None) -> List[int]:
+    fallback = default_map[:] if default_map is not None else [0 for _ in range(max(int(num_experts), 0))]
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+    except Exception:
+        return fallback
+
+    raw_map: Optional[List[Any]] = None
+    if isinstance(payload, list):
+        raw_map = payload
+    elif isinstance(payload, dict):
+        maybe_map = payload.get("expert_to_gpu_map")
+        if isinstance(maybe_map, list):
+            raw_map = maybe_map
+
+    if raw_map is None:
+        return fallback
+
+    values = [int(x) for x in raw_map]
+    target = max(int(num_experts), 0)
+    if len(values) < target:
+        values += fallback[len(values):target]
+    if len(values) > target:
+        values = values[:target]
+    return values
+
+
+def save_expert_map_json(path: str, expert_to_gpu_map: List[int], metadata: Optional[Dict[str, Any]] = None) -> None:
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    payload: Dict[str, Any] = {"expert_to_gpu_map": [int(x) for x in expert_to_gpu_map]}
+    if metadata is not None:
+        payload["metadata"] = metadata
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, sort_keys=True)
+
+
+def is_map_ep_compatible(expert_to_gpu_map: List[int], ep_size: int) -> bool:
+    if ep_size <= 0:
+        return False
+    if len(expert_to_gpu_map) % ep_size != 0:
+        return False
+
+    target_per_rank = len(expert_to_gpu_map) // ep_size
+    counts = [0 for _ in range(ep_size)]
+    for gpu_id in expert_to_gpu_map:
+        g = int(gpu_id)
+        if g < 0 or g >= ep_size:
+            return False
+        counts[g] += 1
+    return all(c == target_per_rank for c in counts)
+
+
+def project_map_to_ep_compatible(expert_to_gpu_map: List[int], ep_size: int) -> List[int]:
+    n = len(expert_to_gpu_map)
+    if n == 0:
+        return []
+    if ep_size <= 0:
+        return [0 for _ in range(n)]
+    if n % ep_size != 0:
+        return build_deepspeed_ep_map(n, ep_size)
+
+    target_per_rank = n // ep_size
+    projected = [-1 for _ in range(n)]
+    counts = [0 for _ in range(ep_size)]
+
+    for expert_id, gpu_id in enumerate(expert_to_gpu_map):
+        g = int(gpu_id)
+        if 0 <= g < ep_size and counts[g] < target_per_rank:
+            projected[expert_id] = g
+            counts[g] += 1
+
+    fill_order: List[int] = []
+    for rank in range(ep_size):
+        need = target_per_rank - counts[rank]
+        if need > 0:
+            fill_order.extend([rank] * need)
+
+    fill_ptr = 0
+    for expert_id in range(n):
+        if projected[expert_id] >= 0:
+            continue
+        if fill_ptr >= len(fill_order):
+            projected[expert_id] = 0
+        else:
+            projected[expert_id] = fill_order[fill_ptr]
+            fill_ptr += 1
+
+    return [int(x) for x in projected]
 
 
 class ExpertLoadHistory:

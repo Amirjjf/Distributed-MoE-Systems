@@ -19,6 +19,11 @@
 
   "precision": "bf16",
   "use_deepspeed_moe": true,
+  "deepspeed_ep_size": 0,
+  "deepspeed_enable_mapped_experts": true,
+  "deepspeed_allow_rebuild_on_rebalance": false,
+  "deepspeed_rebalance_mode": "save_next_requires_restart",
+  "deepspeed_initial_map_path": null,
   "moe_aux_loss_coef": 0.01,
 
   "enable_rebalance_planner": false,
