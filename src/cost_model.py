@@ -9,7 +9,7 @@ MI250X_PEAK_TFLOPS= 383e12
 def calibrate_P_w(steps_1gpu: List[Dict], H:int, 
                     num_layers: int, alpha: int = ALPHA) -> float:
 
-    estimate = []
+    estimates = []
     for s in steps_1gpu:
         t_fwd   = float(s.get("forward_time_sec", 0))
         if t_fwd <= 0:

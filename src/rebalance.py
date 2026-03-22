@@ -265,7 +265,7 @@ def estimate_remote_assignments(expert_loads: List[float], expert_to_gpu: List[i
 
 def compute_load_metrics(gpu_loads: List[float]) -> Dict[str, float]:
     if _cost_model is not None:
-        return compute_cost_metrics(gpu_loads, _cost_model.P_w, _cost_model.H, _cost_model.nu)
+        return compute_cost_metrics(gpu_loads, _cost_model.P_w, _cost_model.H, _cost_model.num_layers)
     
     if not gpu_loads:
         return {
