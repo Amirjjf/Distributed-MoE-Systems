@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "train_steps": 200,
+  "log_every": 10,
+  "vocab_size": 32000,
+  "seq_len": 512,
+  "micro_batch_size": 8,
+  "hidden_size": 512,
+  "num_layers": 2,
+  "num_experts": 8,
+  "top_k": 1,
+  "lr": 0.0001,
+  "weight_decay": 0.01,
+  "grad_clip": 1.0,
+  "precision": "bf16",
+  "use_deepspeed_moe": true,
+  "moe_aux_loss_coef": 0.01
+}
+
