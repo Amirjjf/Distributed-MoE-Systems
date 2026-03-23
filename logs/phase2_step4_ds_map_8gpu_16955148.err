@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<frozen os>", line 685, in __getitem__
+KeyError: 'CONFIG'
+srun: error: nid005153: task 0: Exited with exit code 1
+srun: Terminating StepId=16955148.0

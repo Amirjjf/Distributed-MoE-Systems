@@ -1,0 +1,9 @@
+allowed_cpus_in_job=112
+visible_gpus = 8
+CUDA_VISIBLE_DEVICES = None
+HIP_VISIBLE_DEVICES = None
+ROCR_VISIBLE_DEVICES = 0,1,2,3,4,5,6,7
+config=configs/heavy_phase2_step4_deepspeed_mapping_startup_real.json
+run_name=phase2_step4_ds_map_8gpu
+initial_map_path=<none>
+using_nproc_per_node=8
