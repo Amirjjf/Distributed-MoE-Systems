@@ -11,7 +11,7 @@
 #SBATCH --hint=nomultithread
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-#SBATCH --chdir=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1
+#SBATCH --chdir=/pfs/lustrep4/scratch/project_462001047/jafaria
 
 set -euo pipefail
 

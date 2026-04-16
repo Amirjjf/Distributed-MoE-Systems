@@ -1,13 +1,34 @@
 {
+  "deepspeed_mapping": {
+    "ep_sizes_seen": [
+      8
+    ],
+    "map_rebuild_count_total": 0,
+    "mapping_apply_modes_seen": [
+      "ep_layout_only_no_custom_startup_map"
+    ],
+    "mapping_enabled_rate": 0.0,
+    "num_pending_map_paths_seen": 0,
+    "num_saved_next_map_events": 0,
+    "pending_map_paths_seen": [],
+    "rank_local_expert_counts_seen": [
+      4
+    ],
+    "rows_with_global_to_local_index": 75,
+    "startup_apply_reasons_seen": [
+      "applied_default_deepspeed_ep_layout"
+    ],
+    "startup_map_projection_seen": false
+  },
   "expert_imbalance": {
-    "cv_avg": 0.056924449148391454,
-    "cv_max": 0.1480192484531435,
-    "max_min_ratio_avg": 1.3038834972595577
+    "cv_avg": 0.04130551273630938,
+    "cv_max": 0.05857999163268838,
+    "max_min_ratio_avg": 1.1964845234472963
   },
   "global_batch_tokens_per_step": 16384,
   "memory": {
-    "max_allocated_bytes": 55062196736.0,
-    "max_reserved_bytes": 57856229376.0
+    "max_allocated_bytes": 9937516032.0,
+    "max_reserved_bytes": 10791944192.0
   },
   "metadata": {
     "command": "src/train.py --config configs/heavy.json --deepspeed --ds_config configs/ds_config_moe.json --run_name phase2_heavy_8gpu --out_dir results",
@@ -26,19 +47,46 @@
     "nccl_debug": "INFO",
     "seed": 42
   },
-  "num_logged_points": 10,
+  "num_logged_points": 75,
+  "rebalance_planner": {
+    "avg_communication_proxy_current": null,
+    "avg_communication_proxy_proposed": null,
+    "avg_remote_fraction": 0.0,
+    "enabled": false,
+    "num_applied_rebalances": 0,
+    "num_evaluations": 0,
+    "num_triggers": 0,
+    "num_triggers_blocked_deepspeed": 0,
+    "num_triggers_dry_run_only": 0,
+    "num_triggers_saved_next_deepspeed_map": 0,
+    "total_experts_moved": 0,
+    "trigger_rate": 0.0,
+    "triggered_expected_improvement_avg": null,
+    "triggered_metric_current_avg": null,
+    "triggered_metric_proposed_avg": null
+  },
+  "rebalance_runtime": {
+    "applied_rebalances": 0,
+    "avg_remote_fraction": 0.0,
+    "blocked_deepspeed_triggers": 0,
+    "dry_run_only_triggers": 0,
+    "remote_fraction_after_apply_avg": null,
+    "remote_fraction_before_apply_avg": null,
+    "saved_next_deepspeed_map_triggers": 0,
+    "total_experts_moved": 0
+  },
   "run_name": "phase2_heavy_8gpu",
   "throughput": {
-    "steps_per_sec_avg": 1.3686671805223272,
-    "tokens_per_sec_avg": 22424.24308567781,
-    "tokens_per_sec_max": 23097.42454901216,
-    "tokens_per_sec_median": 22358.96704675741
+    "steps_per_sec_avg": 2.821516905970083,
+    "tokens_per_sec_avg": 46227.73298741384,
+    "tokens_per_sec_max": 90842.9294255396,
+    "tokens_per_sec_median": 43844.653884177795
   },
   "timing": {
-    "avg_backward_time_sec": 0.22929442417807877,
-    "avg_forward_time_sec": 0.08691081050783396,
-    "avg_optim_time_sec": 0.41466024399269374,
-    "avg_step_time_sec": 0.7308662602910772
+    "avg_backward_time_sec": 0.049505809073646864,
+    "avg_forward_time_sec": 0.2551420677267015,
+    "avg_optim_time_sec": 0.0785880622640252,
+    "avg_step_time_sec": 0.38323682418093086
   },
   "world_size": 8
 }

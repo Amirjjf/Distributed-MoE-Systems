@@ -7,7 +7,7 @@
 #SBATCH --ntasks=1
 #SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-task=8
-#SBATCH --chdir=/pfs/lustrep4/scratch/project_462001047/jafaria/moe-phase1
+#SBATCH --chdir=/pfs/lustrep4/scratch/project_462001047/jafaria
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 
