@@ -327,8 +327,8 @@ Recommended JSONL fields to inspect:
   EMA wasted fraction (β=0.9, θ=0.05) is the Pareto-optimal trigger config.
   Threshold and eval interval have secondary effects.
 - **Load-sorted mapping always produces zero savings.**
-  The proposed map equals the current map by construction — the planner correctly predicts
-  zero improvement and never triggers. This is a null result, not a bug.
+  The proposed map equals the current map by construction. The planner correctly predicts
+  zero improvement and never triggers.
 - **Predicted savings scale with GPU count, but the 5% threshold is absolute.**
   It should ideally be expressed relative to step time rather than as a fixed fraction.
   This is a known limitation and an open direction for future work.
