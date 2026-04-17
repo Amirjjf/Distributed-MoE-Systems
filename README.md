@@ -311,3 +311,10 @@ Recommended JSONL fields to inspect:
 - `expert_std`
 - `expert_cv`
 - `expert_max_min_ratio`
+
+### **AI Usage Disclosure**:
+>We have used AI tools in particular ChatGPT and Claude for several aspects:
+> 1. finding articles and summarizing them and learning more abot the MoE concepts, Rebalancing Methods, etc.  
+> 2. for debugging the programming related issues in the code for example fixing python errors etc.
+> 3. to help us write the README.md file in a much more structured way so that the instructions are more clear. 
+> 4. Assisting in generating and improving some technical code and configuration scripts. AI tools were used to help refine components, configuration files, and testing scripts. All generated code was reviewed, tested, and fully integrated by us.
