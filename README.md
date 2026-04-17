@@ -312,6 +312,26 @@ Recommended JSONL fields to inspect:
 - `expert_cv`
 - `expert_max_min_ratio`
 
+## Lessons Learned
+
+### Infrastructure
+- **Use `torchrun` with `--ntasks-per-node=1` for multi-node jobs.**
+  Bare `python` with `--ntasks-per-node=8` causes port conflicts across SLURM tasks.
+  Let `torchrun --nproc_per_node=8` manage worker spawning internally.
+  Derive `MASTER_ADDR` from `scontrol show hostnames`; never hardcode scratch paths — use `SLURM_SUBMIT_DIR`.
+- **DeepSpeed EP rebalancing requires a job restart.**
+  In-job expert migration is not supported. Rebalance decisions are saved as pending map artifacts
+  and applied on the next run via `deepspeed_initial_map_path`.
+### Parameter Study
+- **Cooldown dominates trigger frequency; EMA smoothing beats raw metrics.**
+  EMA wasted fraction (β=0.9, θ=0.05) is the Pareto-optimal trigger config.
+  Threshold and eval interval have secondary effects.
+- **Load-sorted mapping always produces zero savings.**
+  The proposed map equals the current map by construction — the planner correctly predicts
+  zero improvement and never triggers. This is a null result, not a bug.
+- **Predicted savings scale with GPU count, but the 5% threshold is absolute.**
+  It should ideally be expressed relative to step time rather than as a fixed fraction.
+  This is a known limitation and an open direction for future work.
 ### **AI Usage Disclosure**:
 >We have used AI tools in particular ChatGPT and Claude for several aspects:
 > 1. finding articles and summarizing them and learning more abot the MoE concepts, Rebalancing Methods, etc.  
